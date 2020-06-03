@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Build - Circuit and Sensors</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Memunat I.</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="project-text">
+                        <h1>Ciruits and Sensors</h1>
+                        <hr class="d-none d-lg-block mb-4 ml-0" />
+                        <div class="col-lg-12">
+                            <img class="img-fluid" src="assets/img/demo-image-sensor.jpg" alt="" />
+                        </div>
+                        <p class="mb-0 text-black-50">
+                            This was covered in the second fortnight of the semester. In the fortnight, I learned the basics of circuitry, creating and connecting power to electric network, and the relationship between current, resistors, and voltage.
+                        </p>
+                        <h3>Learning Resources</h3>
+                        The skills session was preceded with getting familiar with the concept of circuitry, electronics and sensors by:
+                        <ul>
+                            <li>A refresher class on Electric charge, Current, Resistance, Voltage, Power and Circuit design fundamentals</li>
+                            <li>Installing Adafruit Windows Driver following the instructions <a href="https://learn.adafruit.com/adafruit-arduino-ide-setup/windows-driver-installation">here</a></li>
+                            <li>Installing Circuit Playground Express CircuitPython 5.3.0 <a href="https://circuitpython.org/board/circuitplayground_express/">here</a></li>
+                            <li>Updating the Circuit Playground Express (CPE) Bootloader following the instructions <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">here</a></li>
+                            <li>Installing Mu Editor from <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/installing-mu-editor">here</a></li>
+                            <li>Reading Circuit Playground Express pins <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts">documentation</a> and getting started <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express">tutorial</a> to get familair with the CPE pins and onboard sensors</li>
+                        </ul>
+                        <h3>Key Skills and Components</h3>
+                        <ul>
+                            <li>Jumper wires</li>
+                            <li>Resistors</li>
+                            <li>LEDs</li>
+                            <li>Battery</li>
+                            <li>Breadboard</li>
+                            <li>Adafruit Circuit Playground Express board</li>
+                            <li>USB cord</li>
+                            <li>Adafruit Circuit Playground Express Bootloader</li>
+                            <li>Python</li>
+                            <li>Code Editor: Mu Code</li>
+                        </ul>
+                        <h3>Activities</h3>
+                        <h4>Lighting Up an LED</h4>
+                        <p>
+                            For this activity, we started with trying to light up an LED by connecting it to a battery through a breadboard.
+                            First we had to be able to know which LED leg to connect to power and which to connect to ground that is, which is the cathode (long leg) and which is the anode (short leg). 
+                            We tried to see how much current the LED can take and not burn out. Given that LEDs typically need 3.3V-5V power, we connected a 4.5V and a 3V battery to the LED, but the LED didn't burn out. It turned out we connected the batteries wrongly. Our connection was in parallel, to burn out the LED, I has to be in series; it became a practical lesson on series versus parallel circuits as shown in the images below.
+                        </p>
+                        <img class="col-lg-5" src="assets/img/demo-image-series.jpg" alt="" />
+                        <img class="col-lg-5" src="assets/img/demo-image-parallel.jpg" alt="" />
+                        <p>
+                            Afterward, we connected a 1k resistor to the circuit to reduce the current going to the LED, to avoid the LED getting "fried" due to power surge.</p>
+                        <h4>Play with Ciruit Playground Express Board Sensors</h4>
+                        <p>
+                            With the lesson learned from experimenting with the LED, it the purposes of the Ground, the Vout and the 3.3V pads on the CPE board became clearer. Following the CPE <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">guide</a>, I was able to:
+                            <div class="row">
+                                <img class="col-lg-5" src="assets/img/demo-image-flag.gif" alt="" />
+                                <ul class="col-lg-7" style="display: inline-block; margin-top: 1rem;">
+                                    <li>Blink the LEDs on the CPE</li>
+                                    <li>Use the CPE onboard switch and buttons to control the board's operations</li>
+                                    <li>Use the onboard accelerometer to detect movements, taps, shakes and use the state of the acceleromemter to control my program execution</li>
+                                    <li>Detect my room temperature, light brightness level, and noise level using the onboard temperature, light, and sound sensors. I used the levels to control the CPE's LEDs</li>
+                                    <li>I programmed to onboard NeoPixel LEDs to display the colors of various country's national flags</li>
+                                </ul>
+                            </div>
+                        </p>
+                        <h3>Challenges and Solutions</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Connecting components to the circuit accordingly</b>: since it was my first time figuring out the right amount of power to be connected to a circuits connection, it was quite challenging. I had to figure out the current limitations of the components, decide if the connection should be in series or parallel, determine when to use resistors, connect the power and ground correctly
+                                </p>
+                                <p>
+                                    <b>Solution:</b> I learned that the best way to go about this is to read the specifications, requirements and documentation (if available) of every component on a circuit. Also, I have to ensure I am familiar with the components pins or pads and their functions before connecting them to the circuit.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Drive folder (CDRIVEBOOT) not visible:</b> According to the instructions, once I plug in the CPE board using a USB data cable and have successfully installed CircuitPython, I will see the CIRCUITPY drive folder. However, having following the installation <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a> carefully, I still couldn't see the drive folder whenever I plugged in the CPE. I spent days trying to figure out what went wrong or what was missing.
+                                </p>
+                                <p>
+                                    <b>Solution:</b> I reached out to Zena (one of the course instructors) and we tried to figure out what was wrong, it turned out I was supposed to press the CPE's reset button twice for it successfully mount on my computer and for the drive folder to be visible.
+                                </p>
+                            </li>
+                        </ul>
+                        <h3>Takeaway Lessons</h3>
+                        <ul>
+                            <li>
+                                When setting up or building electric circuits, every detail counts! I was stuck for days because I omitted the fact that I am supposed to press the CPE's reset button twice in the <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a>
+                            </li>
+                            <li>
+                                After assembling the components, it is important to test the circuit to ensure that every component is still functional and not faulty, and the circuit connection was done correctly.
+                            </li>
+                            <li>Most importantly, I should always communicate and seek help when needed; I should help others whenever I can too.</li>
+                        </ul>
+                        <h3>Achievement</h3>
+                        At the end of the activities, I learned how to:
+                        <ul>
+                            <li>Connect components to circuits correctly and troubleshoot them.</li>
+                            <li>Program Circuit Playground Express (CPE) in circuit python.</li>
+                            <li>Manipulate the CPE program execution based on the data from the sensors, buttons and switch.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-globe text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Website</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">https://memmusty.github.io/3AInstitute/</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">memunati@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+234-817-587-3064</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.linkedin.com/in/memunat-ajoke-ibrahim/"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="https://github.com/memmusty/"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/_memunat_"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/memunatj"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © MemunatI. 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
