@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Grayscale - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Memunat I.</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="build.html#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activities">Activities</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <div class="row align-items-center mb-4 mb-lg-5">
+                    <div class="project-text">
+                        <h1>Data Collection and Analysis</h1>
+                        <hr class="d-none d-lg-block mb-4 ml-0" />
+                        <div class="col-lg-12">
+                            <img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" />
+                        </div>
+                        <br/>
+                        
+                        <h3>Introduction</h3>
+                        <p>
+                            This page provides a documentation of my journey in the third fortnight and the second week of the second fortnight. The weeks' reflection highlights an introduction to the PM2.5 air quality sensor, data and the data collection standards; data creation, collection, questioning and exploration. It also highlights my attempt to combine 2 air quality datasets (one collected by us and the other by the <a href="https://www.data.act.gov.au/">ACT</a> Government). 
+                        </p>
+                        <p>
+                            Prior to this fortnight, I had never collected air related data and had only learned data wrangling and visualization using Python, Microsoft Excel, and Tableau at Udacity in 2018. I hadn't really used these skills because I worked as a full-time software developer. I thought I was prepared for the coming activities, little did I know what was coming. The following activities led me into questioning how data is collected, data integrity, and how I question data.
+                        </p>
+
+                        <h3>Learning Resources</h3>
+                        The skills session was preceded with learning about data, data collection process, PM2.5 Air quality sensor, and air quality definition and standards from reading these resources:
+                        <ul>
+                            <li>Conceptualising Data from The Data Revolution: Big Data, Open Data, Data Infrastructures & Their Consequences - SAGE by Kitchin, 2014</li>
+                            <li>Bias in Computer Systems by Friedman and Nissenbaum, 1996 </li>
+                            <li>PM2.5 Air Quality Sensor <a href="https://learn.adafruit.com/pm25-air-quality-sensor/overview">documentation</a> and <a href="https://publiclab.org/wiki/purpleair">use cases</a></li>
+                            <li>ACT Health advice for smoky air (PM2.5) <a href="https://www.health.act.gov.au/about-our-health-system/population-health/environmental-monitoring/monitoring-and-regulating-air-0">here</a></li>
+                            <li>Air Quality Units of Measurement <a href="https://www.ess.co.at/AIR-EIA/units.html">here</a></li>
+                        </ul>
+                        <h3>Key Skills and Components</h3>
+                        <ul>
+                            <li>Jumper wires</li>
+                            <li>PM2.5 Air Quality Sensor</li>
+                            <li>Breadboard</li>
+                            <li>Adafruit Circuit Playground Express board</li>
+                            <li>USB cord</li>
+                            <li>Code Editor: Mu Code</li>
+                            <li>Tableau Desktop</li>
+                            <li>Python</li>
+                        </ul>
+                        <h3 id="activities">Activities</h3>
+                        <h4>Collecting Air Quality Data</h4>
+                        <p>
+                            This activity began with an introduction to air particles and air quality measuremnt, followed by an introduction to the PM2.5 air quality sensor and how it detect the air particles. Afterwards, we were paired and was asked to use the sensor and a sample code we were provided with to log the air quality data of 3 diffrent environments of choice in an excel sheet. We decided to collect the data of the classroom, a cafe shop and the ANU campus sport field as seen below. We were able to successfully connect the PM2.5 to our computer by first reading its wiring <a href="https://learn.adafruit.com/pm25-air-quality-sensor/python-and-circuitpython">guide</a>. 
+                        </p>
+                        <div class="row">
+                            <figure class="col-lg-4" >
+                                <img class="img img-fluid" src="assets/img/demo-image-01.jpg" alt="" />
+                                <figcaption><em>Collecting the classroom air quality data</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-4" >
+                                <img class="img img-fluid" src="assets/img/demo-image-cafe.jpg" alt="" />
+                                <figcaption><em>Collecting an on-campus cafe shop air quality data</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-4" >
+                                <img class="img img-fluid" src="assets/img/demo-image-sport.jpg" alt="" />
+                                <figcaption><em>Collecting the ANU campus sport field air quality data</em></figcaption>
+                            </figure>
+                        </div>
+                        <p>
+                            In order to record the locations of the collected air quality data in the sheet, we noted the start and end time of collecting the data, including the number of rows of data collected at the stop time for each location in a jotter. The locations of these data were manually filled into the excel sheet afterward by using the noted start time, end time, and number of data entries to trace the data collected in each location.
+                        </p>
+                        
+                        <h4>Explored and Questioned COVID-19 data</h4>
+                        <p>
+                            This was short a activity in the 5th week of the semester. This activity involved picking any COVID-19 related public dataset of choice and questioning their sources and reliability. I questioned Nigeria's record of her COVID-19 cases sourced from the Nigeria Centre for Disease Control (NCDC). The dataset can be found <a href="https://covid19.ncdc.gov.ng/">here</a>. I questioned the data based on what I had learned so far (from reading <i>Kitchin's Conceptualising Data</i>) about data collection process and how it can be influenced by:
+                        </p>
+                        <ul>
+                            <li>the person collecting the data - their experience, assumptions, and aspirations</li>
+                            <li>the data measuremnt tools used</li>
+                            <li>the environment where the data was collected</li>
+                            <li>the limitations of the data storage and management infrastructure</li>
+                            <li>politics involved in collecting the data - what/who was included and omitted? why was the data collected?</li>
+                            <li>the story of the data - its history, context, intent, limitations, how it has evolved, etc.</li>
+                        </ul>                        
+                        <p>
+                            The activity was a short but really interesting one. It opened my eyes to the essence of examining data and how our prior knowledge and assumptions about the data and its locale can influence how it is questioned and interpreted. It also showed the importance of meta-data and how limiting that can be - what is missing in the meta-data? how reliable are meta-data?
+                        </p>
+
+                        <h4>Analysing and Combining Datasets</h4>
+                        <p>
+                            This activity began with downloading ACT's air quality <a href="https://www.data.act.gov.au/Environment/Air-Quality-Monitoring-Data/94a5-zqnn">data</a> from the ACT Open Data Portal, reading its meta-data and importing it to Tableau for exploratory data analysis (the data contains data from the air quality data collection centers in Civic, Florey, and Monash). This was followed by exploring the data in Tableau to see if the columns have the correct data type (based on their description in the meta-data), and also looking into what columns can be further splitted or transformed to get atomic and relevant values. The columns were transformed (converted to the right data type, splitted composite data), renamed columns with more descriptive names) to forms that can be visualized in Tableau. The transformed data was mapped using plots, charts and maps.
+                        </p>
+                        <div class="row">
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/demo-image-line.JPG" alt="" />
+                                <figcaption><em>Exploring the average air quality trend over years</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/demo-image-map.gif" alt="" />
+                                <figcaption><em>Viewing the trend of the air quality of each suburb on map</em></figcaption>
+                            </figure>
+                        </div>
+                        <p>
+                           To explore further, I attempted to combine the ACT data with the data we collected using PM2.5 sensor. No matter how much I tried, I couldn't combine them because the format in which our data was recorded was different from ACT's. This made me reflect on the importance of having a shared standard for collecting related publicly available data.
+                        </p>
+                        <h4>Creating a Public Data Collection and Monitoring Application</h4>
+                        <p>
+                            This was a grouped class activity that involved designing a air quality alert application that is based on a real-time air quality monitoring and collection system. The collected data will influence critical decisions to be taken about the masses and their well-being. On a long-term, it could economically empower or handicap communities. Having this in mind, we had to critically think about:
+                            <ul>
+                                <li>the factors to consider in designing this system.</li>
+                                <li>what data should be collected to aid our decisions.</li>
+                                <li>who is affected directly and indirectly? and what data about them do we want to collect</li>
+                                <li>what expertise will be needed to build this system at scale</li>
+                                <li>how do we ensure we have developed a fair system - how do we define "fairness"? how transparent will the system be? how do we know what data require seeking user consent? what data should we not collect?</li>
+                            </ul>
+                            The result of this critical discussion was a flow chart of how the air quality alert system will work. On the top right is a rough note of the stakeholders we thought should be involved in maintaning and updating the system.
+                        </p>
+                        <figure>
+                            <img class="col-lg-5" src="assets/img/demo-image-flowchart.jpg" alt="" />
+                            <figcaption><em>A snapshot of the flowchart of our proposed system</em></figcaption>
+                        </figure>
+                        <p>
+                            This activity opened my eyes to the questions we need to ask when we collect data, and how the data we "collect" can result in loss of economic opportunity for some (marginalised) group(s). It made me reflect on what actors are considered when creating public applications - how do we decide who and what to factor in? how do we decide who and what should be prioritized? how does knowing where our data could be used changed the conversation we have and the questions we ask? how do we develop ethical social systems - how do we define ethics without being biased or blinded by assumptions?
+                        </p>
+                        <h3>Challenges and Solutions</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Combining the ACT and our air quality data:</b> The thought of combining both air quality datasets for comparison and exploration was easy and exciting, until I attempted it. The structure of the ACT data table was completely different from ours, making them almost impossible to join together. I attempted renaming and transforming some of our data columns so they'd be similar to ACT's, it still couldn't eliminate the discrepancies.
+                                </p>
+                                <p>
+                                    <b>Solution:</b> This made us realize the importance of having a shared standard for collecting public data or publicly available data. Also, had it been we collected our data with the intent of combining it with ACT data, we might have collected it differently and optimized the data for the purpose.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Deciding whose data should be collected and whose shouldn'te:</b> during the data application design exercise, having reflected on how impactful the data collected could be, it was really difficult to decide if we have considered every relevant party. Our knowledge is limited, we can only reason based on experiences and backgrounds - working on this activity with a diverse team reflected this. How do we know our data is diverse enough? How do we determine whose data is "relevant and worthy" of being captured? How do we know our assumptions about "diversty" is not wrong? How do we know when we're assuming and question our assumptions? How do we know our data is ethical!?
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Exploring data objectively:</b> it was tricky to explore data from known sources or locale objectively with no assumptions or expectations of analytics result. This is my observation during the COVID-19 dataset exercise and I am consciously working managing my assumptions and expectations during analytics.
+                                </p> 
+                            </li>
+                        </ul>
+                        <h3>Takeaway Lessons</h3>
+                        <ul>
+                            <li>Our assumptions and aspirations can influence and shape how we collect and question data, it is essential to assume an objective role when collecting and questioning data.</li>
+                            <li>Data analysis and questioning isn't really about how well I can wrangle or manipulate data to get what I want, it requires learning about the data from the dataset and its story - asking the right questions that results in probably uncovering the unexpected.</li>
+                            <li>
+                                It is important to have a detailed data documentation or meta-data that includes its history, content, intent, scope, and how it was collected; the tools used in collecting it, data limitation - who or what was included and wasn't. 
+                            </li>
+                            <li>
+                                Having a shared standard for collecting similar public data makes it easier to combine related data. Note that it can be a limitation on the collected data. 
+                            </li>
+                            <li>
+                                Efforts should be made in collecting tidy data (has the right data type, descriptive variable names, appropriate values), it saves time during analysis. Data should be optimzed for future use by other people aside the data collector.
+                            </li>
+                            <li>
+                                I should always transparently document and communicate my analytics steps - what changes were made and why, for future reference
+                            </li>
+                            <li>The importance of collecting diverse data cannot be overemphasized - the negative consequences of intentionally or unintentionally omitting some groups when collecting data for a diverse use can be unprecedented.</li>
+                        </ul>
+                        <h3>Achievement</h3>
+                        At the end of the activities, I:
+                        <ul>
+                            <li>Collected raw air quality data.</li>
+                            <li>Understood the process of collecting raw data, preparing and cleaning them for further use</li>
+                            <li>Learned the importance of setting data collection standard from my inability to combine the air quality datasets.</li>
+                            <li>Learned how to understand and question data, and its integrity or reliability based on what was documented in the meta data (and outside it).</li>
+                            <li>Wrangled and visualized data using tableau.</li>
+                            <li>Unlearned and relearned data collection and anaysis processes - I still have lots of questions on ethical data collection and analysis. How do we define ethics? Who defines it?</li>
+                        </ul>
+                        These exercise essentially opened my mind to the questions we should be asking about data-centric systems and decisions, the reliability and confidence we have in data and ourselves. How limiting is our data and our knowledge or assumptions? How wide, open and inclusive is the "lens" through which we analyse systems and make critical decisions. These questions and many more are important in designing, building, maintaining, and understanding data, its infrastructures and policies; data-centric systems as a whole.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-globe text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Website</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">https://memmusty.github.io/3AInstitute/</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">memunati@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+234-817-587-3064</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.linkedin.com/in/memunat-ajoke-ibrahim/"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="https://github.com/memmusty/"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/_memunat_"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/memunatj"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © MemunatI. 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
