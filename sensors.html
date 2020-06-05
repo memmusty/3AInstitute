@@ -24,8 +24,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="build.html#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activities">Activities</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,60 +45,85 @@
                         <br/>
 
                         <h3>Introduction</h3>
-                        <p>This provides a documentation of my journey in the first week of the second fortnight. The week's reflection highlights a practical introduction to circuitry and its fundamental, the installation and getting familiar with Adafruit Circuit Playground Express, the lessons learned from my failures and struggles, and the incorporation of these lesson in the following activties that involved the use of Circuit Playground Express board and its onboard sensors. Prior to this fortnight, I had only worked on electric circuits once in 2014 during my first degree, and I had vague memory of what computer electronics was about but was excited to "get my hands dirty".</p>
+                        <p>This page provides a documentation of my journey in the first week of the second fortnight. The week's reflection highlights a practical introduction to circuitry fundamentals, the installation and use of Adafruit Circuit Playground Express (CPE), the lessons learned from my failures and struggles with the components, and the incorporation of these lesson in the subsequent activities. Prior to this fortnight, I had only worked on electric circuits once in 2014 during my first degree, and I had vague memory of what computer electronics was about but was excited to "get my hands dirty". At the end of the sessions, I built electronic systems, the hands-on experience made me have an overview of the essential components that typically makes up these systems</p>
                         <h3>Learning Resources</h3>
-                        The skills session was preceded with getting familiar with the concept of circuitry, electronics and sensors by:
+                        The skills session was preceded with getting familiar with the concept of circuitry, electronics and sensors from the outlined rich resources:
                         <ul>
                             <li>A refresher class on Electric charge, Current, Resistance, Voltage, Power and Circuit design fundamentals</li>
                             <li>Installing Adafruit Windows Driver following the instructions <a href="https://learn.adafruit.com/adafruit-arduino-ide-setup/windows-driver-installation">here</a></li>
-                            <li>Installing Circuit Playground Express CircuitPython 5.3.0 <a href="https://circuitpython.org/board/circuitplayground_express/">here</a></li>
-                            <li>Updating the Circuit Playground Express (CPE) Bootloader following the instructions <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">here</a></li>
+                            <li>Installing CPE CircuitPython 5.3.0 <a href="https://circuitpython.org/board/circuitplayground_express/">here</a></li>
+                            <li>Updating the CPE Bootloader following the instructions <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/updating-the-bootloader">here</a></li>
                             <li>Installing Mu Editor from <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/installing-mu-editor">here</a></li>
-                            <li>Reading Circuit Playground Express pins <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts">documentation</a> and getting started <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express">tutorial</a> to get familair with the CPE pins and onboard sensors</li>
+                            <li>Reading the CPE <a href="https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts">documentation</a> and getting started <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express">tutorial</a> to get familiar with the CPE pins and onboard sensors</li>
+                            <li>Reading the TMP36 Tempreture <a href="https://learn.adafruit.com/tmp36-temperature-sensor/overview">documentation</a></li>
                         </ul>
                         <h3>Key Skills and Components</h3>
                         <ul>
                             <li>Jumper wires</li>
                             <li>Resistors</li>
-                            <li>LEDs</li>
+                            <li>Light Emitting Diodes (LEDs)</li>
                             <li>Battery</li>
                             <li>Breadboard</li>
                             <li>Adafruit Circuit Playground Express board</li>
                             <li>USB cord</li>
-                            <li>Adafruit Circuit Playground Express Bootloader</li>
+                            <li>Adafruit CPE Bootloader</li>
+                            <li>LM35 Sensor</li>
                             <li>Python</li>
                             <li>Code Editor: Mu Code</li>
                         </ul>
-                        <h3>Activities</h3>
+                        <h3 id="activities">Activities</h3>
                         <h4>Lighting Up an LED</h4>
                         <p>
                             For this activity, we started with trying to light up an LED by connecting it to a battery through a breadboard.
-                            First we had to be able to know which LED leg to connect to power and which to connect to ground that is, which is the cathode (long leg) and which is the anode (short leg). 
-                            We tried to see how much current the LED can take and not burn out. Given that LEDs typically need 3.3V-5V power, we connected a 4.5V and a 3V battery to the LED, but the LED didn't burn out. It turned out we connected the batteries wrongly. Our connection was in parallel, to burn out the LED, I has to be in series; it became a practical lesson on series versus parallel circuits as shown in the images below.
+                            First we had know which LED leg to connect to power and which to connect to ground, that is, which is the cathode (long leg) and which is the anode (short leg). 
+                            After successfully connecting the LED to power, we tried to see how much current the LED can take without burning out. Given that LEDs typically need 3.3V-5V power, we connected a 4.5V and a 3V battery to the LED, but the LED didn't burn out. It turned out we connected the batteries wrongly. Our connection was in parallel, to burn out the LED, I has to be in series; it became a practical lesson on series versus parallel circuits as shown in the images below.
                         </p>
-                        <img class="col-lg-5" src="assets/img/demo-image-series.jpg" alt="" />
-                        <img class="col-lg-5" src="assets/img/demo-image-parallel.jpg" alt="" />
+                        <div class="row">
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/demo-image-parallel.jpg" alt="" />
+                                <figcaption><em>Initial connection -  parallel circuit</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-6" >
+                            <img class="img img-fluid" src="assets/img/demo-image-series.jpg" alt="" />
+                            <figcaption><em>Final connection - series circuit</em></figcaption>
+                            </figure>
+                        </div>
                         <p>
                             Afterward, we connected a 1k resistor to the circuit to reduce the current going to the LED, to avoid the LED getting "fried" due to power surge.</p>
                         <h4>Play with Ciruit Playground Express Board Sensors</h4>
                         <p>
-                            With the lesson learned from experimenting with the LED, it the purposes of the Ground, the Vout and the 3.3V pads on the CPE board became clearer. Following the CPE <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">guide</a>, I was able to:
+                            With the lesson learned from experimenting with the LED, the functions and purposes of the Ground, the Vout and the 3.3V pads on the CPE board became clearer. Following the CPE <a href="https://learn.adafruit.com/circuitpython-made-easy-on-circuit-playground-express/circuit-playground-express-library">guide</a>, I was able to:
                             <div class="row">
                                 <img class="col-lg-5" src="assets/img/demo-image-flag.gif" alt="" />
                                 <ul class="col-lg-7" style="display: inline-block; margin-top: 1rem;">
                                     <li>Blink the LEDs on the CPE</li>
                                     <li>Use the CPE onboard switch and buttons to control the board's operations</li>
                                     <li>Use the onboard accelerometer to detect movements, taps, shakes and use the state of the acceleromemter to control my program execution</li>
-                                    <li>Detect my room temperature, light brightness level, and noise level using the onboard temperature, light, and sound sensors. I used the levels to control the CPE's LEDs</li>
-                                    <li>I programmed to onboard NeoPixel LEDs to display the colors of various country's national flags</li>
+                                    <li>Detect my room temperature, light brightness level, and noise level using the onboard temperature, light, and sound sensors. I also used the levels to control the CPE's LEDs</li>
+                                    <li>Programme the onboard NeoPixel LEDs to display the colors of various country's national flags</li>
                                 </ul>
                             </div>
                         </p>
+                        <h4>Comparing CPE Board Vs. LM35 Tempreture Sensors</h4>
+                        <p>
+                            This was an additional group exercise to print the temperature of our environment using the CPE onboard tempeature sensor and the LM35 temperature sensor. We read the TMP36 (similar to LM35) sensor's <a href="https://learn.adafruit.com/tmp36-temperature-sensor/overview">documentation</a> to learn about the sensor, its architecture and pins, power requirement, and how it measures temperature. 
+                        </p>
+                        <p>When the temperature data from both sensors got printed out, we noticed variations in the printed data which we learned was due to the in-built resistor on the CPE - the resistance value of the CPE affects the measured temperature. We also attempted to see if we get the same measurement from the LM35 by adding a resistor to its circuit. As seen in the images below, we attempted to change the measured tempeature by placing an ice pack on the sensors, they measured lower temperature some seconds after.</p>
+                        <div class="row">
+                        <figure class="col-lg-6" >
+                            <img class="img img-fluid" src="assets/img/demo-image-temp.jpg" alt="" />
+                            <figcaption><em>Measuring temperature using CPE and LM35 tempreture sensors</em></figcaption>
+                        </figure>
+                        <figure class="col-lg-6" >
+                        <img class="img img-fluid" src="assets/img/demo-image-ice.jpg" alt="" />
+                        <figcaption><em>Altering the temperature with an ice pack</em></figcaption>
+                        </figure>
+                        </div>
                         <h3>Challenges and Solutions</h3>
                         <ul>
                             <li>
                                 <p>
-                                    <b>Connecting components to the circuit accordingly</b>: since it was my first time figuring out the right amount of power to be connected to a circuits connection, it was quite challenging. I had to figure out the current limitations of the components, decide if the connection should be in series or parallel, determine when to use resistors, connect the power and ground correctly
+                                    <b>Connecting components to the circuit accordingly</b>: since it was my first time figuring out the right amount of power to be connected to a circuits connection, it was quite challenging. I had to figure out the current limitations of the components, decide if the connection should be in series or parallel, determine when to use resistors, and correctly connect the power and ground to the right pins.
                                 </p>
                                 <p>
                                     <b>Solution:</b> I learned that the best way to go about this is to read the specifications, requirements and documentation (if available) of every component on a circuit. Also, I have to ensure I am familiar with the components pins or pads and their functions before connecting them to the circuit.
@@ -105,36 +131,48 @@
                             </li>
                             <li>
                                 <p>
-                                    <b>Drive folder (CDRIVEBOOT) not visible:</b> According to the instructions, once I plug in the CPE board using a USB data cable and have successfully installed CircuitPython, I will see the CIRCUITPY drive folder. However, having following the installation <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a> carefully, I still couldn't see the drive folder whenever I plugged in the CPE. I spent days trying to figure out what went wrong or what was missing.
+                                    <b>Troubleshooting hardware/software interface:</b> According to the instructions, once I plug in the CPE board using a USB data cable after I had successfully installed CircuitPython  on my computer, I will see the CIRCUITPY drive folder. However, having followed the installation <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a> carefully, I still couldn't see the drive folder whenever I plugged in the CPE. I spent days trying to figure out what went wrong or what was missing.
                                 </p>
                                 <p>
                                     <b>Solution:</b> I reached out to Zena (one of the course instructors) and we tried to figure out what was wrong, it turned out I was supposed to press the CPE's reset button twice for it successfully mount on my computer and for the drive folder to be visible.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Logging temperature data and timestamp in the right format</b>: one of our tasks involved measuring and logging to a file, real-time temperature data and their timestamp from the CPE temperature sensor. After many futile attempts, I was able to log the data to file by carefully following this <a href="https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem">guide</a>. However, the timestamp was not being logged in the desired format and Python3 time and date functions were not recognized by the CPE.
+                                </p>
+                                <p>
+                                    <b>Solution</b>:After an extensive research, I was able bypass this constraint after reading the CPE Python custom time module <a href="https://circuitpython.readthedocs.io/en/3.x/shared-bindings/time/__init__.html">documentation</a>. Being familiar with the CPE in-built functions and their return value made me to able to determine what functions I could use and manipulate to record the timestamp in the desired format.
                                 </p>
                             </li>
                         </ul>
                         <h3>Takeaway Lessons</h3>
                         <ul>
                             <li>
-                                When setting up or building electric circuits, every detail counts! I was stuck for days because I omitted the fact that I am supposed to press the CPE's reset button twice in the <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a>
+                                When setting up or building electric circuits, every detail counts! I was stuck for days because I omitted the fact that I was supposed to press the CPE's reset button twice in the <a href="https://learn.adafruit.com/welcome-to-circuitpython/installing-circuitpython">instructions</a>
                             </li>
                             <li>
                                 After assembling the components, it is important to test the circuit to ensure that every component is still functional and not faulty, and the circuit connection was done correctly.
                             </li>
+                            <li>It's also helpful to read the components' documentation and find out their limitations - saves time and effort</li>
+                            <li>The tools used for collecting "raw" data may affect the accuracy and integrity of the collected data. It is important to be familiar with these tools and the limitations or inconsistencies they bring</li>
                             <li>Most importantly, I should always communicate and seek help when needed; I should help others whenever I can too.</li>
                         </ul>
                         <h3>Achievement</h3>
                         At the end of the activities, I learned how to:
                         <ul>
                             <li>Connect components to circuits correctly and troubleshoot them.</li>
-                            <li>Program Circuit Playground Express (CPE) in circuit python.</li>
+                            <li>Program CPE in circuit python.</li>
                             <li>Manipulate the CPE program execution based on the data from the sensors, buttons and switch.</li>
+                            <li>Measured temperature data using the CPE and the LM35 temperature sensors</li>
                         </ul>
+                        The skills and lessons learned from these activities will be helpful in building, troubleshooting, exploring, and understanding cyber-physical systems.
                     </div>
                 </div>
             </div>
         </section>
         <!-- Contact-->
-        <section class="contact-section bg-black">
+        <section class="contact-section bg-black" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-3 mb-md-0">
