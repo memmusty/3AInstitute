@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Grayscale - Start Bootstrap Theme</title>
+        <title>Build - Communication and Game Theory</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
@@ -16,6 +16,7 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
@@ -44,10 +45,10 @@
                         <br/>
                         <h3>Introduction</h3>
                         <p>
-                            This provides provides a documentation of my journey in the fourth fortnight. The fortnight's reflection highlights my growth in communicating abstract concepts to diverse audience through conscious team strategizing and ideating, to developing tic tac toe algorithms and translating the algorithms to programs that teach tic tac toe to computer agents with no prior experience. Prior to this fortnight, I had always played tic tac toe but had never really thought of explaining the strategy to agents with no experience and some language barrier. The following activities helped me reflect on and build my communication skills, especially to groups with absolutely different backgroun from mine.
+                            This page provides a documentation of my journey in the fourth fortnight. The fortnight's reflection highlights my growth in communicating abstract concepts to diverse audience through conscious team strategizing and ideating, to developing tic tac toe algorithms and translating the algorithms to programs that teach tic tac toe to computer agents. Prior to this fortnight, I had always played tic tac toe but had never really thought of explaining the strategy to agents with no experience and some language barriers. The activities helped me reflect on and built my documentation and communication skills, especially to groups with absolutely different backgrounds from mine.
                         </p>
                         <h3>Learning Resources</h3>
-                        The skills session was preceded with learning about data, data collection process, PM2.5 Air quality sensor, and air quality definition and standards through reading these resources:
+                        The skills session was preceded with learning about intelligent agents - their attributes, kinds and environments, versions control, and open-source community code of conduct from these resources:
                         <ul>
                             <li>Chapter 2 of Artificial Intelligence: A Modern Approach by Russell and Norvig, 2016</li>
                             <li>An introduction to version control with <a href="https://git-scm.com/">git</a> material</li>
@@ -65,76 +66,101 @@
                         <h3 id="activities">Activities</h3>
                         <h4>Study and Define Tic Tac Toe strategy</h4>
                         <p>
-                            For this activity, I was paired with Ned. This activity involved playing tic tac toe repeatedly with Ned, consciously noting his and my moves and decipher our strategies for winning the game. We took turns in playing as the first player and paid attention to the move we make as the first player, the move we makes as the second player, how we try to win the games and block the opponent from winning. Tic Tac Toe is a game I have been playing since I was a child, and this activity was rather an interesting one. Paying attention how I reason, strategize and restrategize based on my opponent's move, and also how I study his moves, try to figure out his strategies and predict his next move to determine the best winning strategy was an eye-opener on what we might want to think about when we document or communicate strategies.
+                            For this activity, I was paired with Ned. This activity involved playing tic tac toe repeatedly with Ned while consciously noting his and my moves and deciphering our strategies for winning the game. We took turns in playing first and paid attention to the moves we make as the first player, as the second player, and how we try to win the games and prevent the opponent from winning. Tic Tac Toe is a game I have been playing since I was a child, and this activity was rather an interesting one. In trying to formalize my best winning strategy against my opponent, I studied our playing patterns, tried to infer our thoughts process and how our moves influenced each other's decisions. Trying to represent/document to how I reason, strategize and restrategize based on my opponent's move, and how I figure out his strategies and predict his next move was an eye-opener on just how much processes go "unnoticed" when we do things intuitively. 
                         </p>
                         <p>                             
-                            Interestingly, when we tried to redefining the strategy for audiences with no experience playing tic tac toe. It became obvious that there are some level of assumptions we have about our audiences prior knowledge and our audiences shape the language we use in communicating abstract ideas.
+                            At the end of this activity, we both had our strategies defined and we discussed and compared what we had individually documented based on our observation as we played the game. It made us reflect on what we might want to think about when we document or communicate abstract concepts.
                         </p>
 
-                        <h4>Developing Algorithms for the Strategy</h4>
+                                <h4>Representing the Strategy in a Flowchart</h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                <p>
+                                    For us to codify the defined strategy, we needed it to be in a more explicit and logical form.  In this activity, we redefined the strategy using algorithms and flowcharts. Unlike what we previously had, algorithms and flowcharts represents solutions as <i>step-by-step</i> processes - our strategy didn't fully capture the <q>steps</q>. 
+                                </p>  
+                                <p>
+                                    To achieve this, we simulated every possible scenario, observing our decision processes, now paying attention to our moves as we progress (steps). Our attempt to represent it in a flowchart made us realize the complexity and dynamics of the decision process; flowchart was quite limiting in representing that. Unlike other step-by-step processes, an agent can take many different decisions given the same condition, having this in a flowchart was tricky. Pseudocode was more flexible in capturing these as shown in the image below.
+                                </p>                     
+                                <p>
+                                    Before representing our strategy in a flowchart, we tried redefining the strategy for audiences with no experience or intuition for playing tic tac toe; it was interesting to see how much assumptions we had about our audience prior knowledge. Just when I think my strategy is explicit enough, iterating over it exposes some implicitness in it based on some assumptions I had (but didn't know I did). The key lesson here is, our audiences shape the language we use in communicating.
+                                </p>
+                            </div>
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/demo-image-pseudo.JPG" alt="" />
+                                <figcaption><em>A snapshot of the tic tac toe pseudocode</em></figcaption>
+                            </figure>
+                        </div>
+                        <h4>Coding a Tic Tac Toe Agent</h4>
                         <p>
-                            The strategy deviced from repeatedly playing tic tac toe with Ned was used in designing a flowchart describing strategy and the best move to take as the game progresses. This was later converted to a pseudocode for creating an intelligent tic tac toe agent.
-                        </p>                       
-                        <p>
-                            ...
-                        </p>
-                        <h4>Building a Tic Tac Toe Agent</h4>
-                        <p>
-                            ...
+                            Building on a provided sample code, we are now to codify our algorithm in python to create a tic tac toe agent. Coding the tic tac toe agent involved:
+                            <ul>
+                                <li>Defining 2 states for each player: X and O</li>
+                                <li>Defining all possible win combination in a list</li>
+                                <li>Getting the tic tac toe board current state in a string format</li>
+                                <li>Determine who is playing next based on the board state</li>
+                                <li>Writing a function that compare the board state with the win combination to detect potential wins</li>
+                                <li>Writing a function that occupy the corner that is best to create a win opportunity</li>
+                                <li>If there are potential wins, the agent makes its move there - it makes the agent win or block its opponent from winning</li>
+                                <li>If no wins, it makes its move on the next available corner</li>
+                                <li>If all corners are occupied, its makes its some other random space on the board</li>
+                            </ul>
+                            The images below shows the progress of the game from making its move on just the next available space on the board, to making strategic moves based on the board state.
                         </p>
                         <div class="row">
-                            <figure class="col-lg-4" >
+                            <figure class="col-lg-6" >
                                 <img class="img img-fluid" src="assets/img/agent 1.JPG" alt="" />
-                                <figcaption><em></em></figcaption>
+                                <figcaption><em>Agent only occupies the next empty space on the board</em></figcaption>
                             </figure>
-                            <figure class="col-lg-4" >
-                                <img class="img img-fluid" src="assets/img/agent2.PNG" alt="" />
-                                <figcaption><em></em></figcaption>
-                            </figure>
-                            <figure class="col-lg-4" >
-                                <img class="img img-fluid" src="assets/img/agent3.PNG" alt="" />
-                                <figcaption><em></em></figcaption>
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/agent2.PNG" size=200% alt="" />
+                                <figcaption><em>Agent making move strategically</em></figcaption>
                             </figure>
                         </div>
                         <p>
-                           ...
+                            My thoughts on this activity is best described by the quote "If you can't explain it simply, you don't understand it well enough."
                         </p>
                         <h4>Version Control with a Diverse Team</h4>
                         <p>
-                            ...
+                            For this activity, I was grouped with Ned and Rachel to collaboratively build a tic tac toe agent over git. Our group was made of people with entirely different career backgrounds, which made it quite interesting. The experience made me realize how difficult it can be to collaborate with people with diverse background remotely. Before now, I had assumed working collaboratively remotely especially on git is usually smooth, which was mostly because I had only used git collaboratively with programmers who are also familiar with git. 
                         </p>
-                        <img class="col-lg-5" src="" alt="" />
-                        <p>
-                            ...
-                        </p>
+                        <p>Additionally, I learned to be a better communicator, especially with my code documentation. I usually don't write detailed comments or description in my code because I and my teammates have just enough knowledge of the code-base to understand what is going on. Now, I document my code not just for me and my teammates, but for anyone interested in understanding what the code does.</p>
                         <h3>Challenges and Solutions</h3>
                         <ul>
                             <li>
                                 <p>
-                                    <b>...:</b> 
+                                    <b>Communicating in the Right Language:</b> working on the tic tac toe agent made me understand just how much effort one need to put when describing a process to an audience with no or little background knowledge. It took a lot of efforts for me to be able to describe these abstract ideas in really simple terms. It made me think of my past works and how little I had thought about my audience when documenting (I used to think I had no assumptions and it was simple enough).
                                 </p>
                                 <p>
-                                    <b>Solution:</b> ...
+                                    <b>Solution:</b> I realized I need to pay more attention to my audience and understand their language. I also iterated my communication strategy over and over until the level I believe is simple enough for my audience (there might still be some assumptions I won’t notice I made because of my level of familiarity with the concepts I am communicating).
+                                </p>
+                                <p>
+                                    <b>Influence from my Experience:</b> Initially, my codes documentations were not so detailed which I think is due to the fact that I assume most of my codes will only be seen or revisited by me or my team (for group projects). My past audience are people that have the necessary knowledge needed to understand my codes, hence I grew the habit of documenting just few tips in my codes that is enough for them to understand what a code section does.                                                                      
+                                </p>
+                                <p>
+                                    <b>Solution:</b> Documenting not just what a code session is doing, but also why it is there - my thoughts and decisions as I code.
                                 </p>
                             </li>
                         </ul>
                         <h3>Takeaway Lessons</h3>
                         <ul>
-                            <li>AI and Machine learning: Not only machine learning systems are AI systems. AI agents are not limited to learning and taking deicions using machine learning algorithms</li>
+                            <li>AI and Machine learning: Machine learning is just one of the many ways to teach AI systems. AI agents are not limited to learning and taking decisions using machine learning algorithms</li>
                             <li>Team work is important - especially with diverse groups, they bring in multiple perspective.</li>
+                            <li>When sharing knowledge especially on abstract ideas, I need to put my audience first! Understand them, their language and background. It helps with getting the message across to the audience.</li>
+                            <li>Having zero assumptions about my audience background knowledge of the concept I intend to communicate; I should try to know just how much they know about the concept. It helps set boundaries on how much of the details of the concept I need to share.</li>
+                            <li>Revising the document or story I want to share repeatedly. The more I iterate over it, the better it is for me and the audience.</li>
                             <li>
-                                Detailed and proper documentation is important. When doing this, it is most important to put my audiences first, understand their language and have no assumptions about their prior knowledge or language. 
-                            </li>
+                                Detailed and proper documentation of my work is important. Detailed documentation of programs and progress makes one's work more appreciated and easily understood.</li>
                         </ul>
                         <h3>Achievement</h3>
                         At the end of the activities, I:
                         <ul>
                             <li>Created an intelligent agents from ideating to programming</li> 
                             <li>Collaboratively contributed to a project of diverse team</li>
-                            <li>Understand what goes into creating a simple agent from idea to executable code - understand how human assumptions, intuition, and strategic thinking get translated into computational agents</li>
-                            <li>Learned the act of active and detailed documentation of my journey, experience, decision, assumptions when developing algorithms and systems whether personal ot shared.</li>
+                            <li>Now understand what goes into creating a simple agent from idea to executable code - understand how human assumptions, intuition, and strategic thinking get translated into computational agents</li>
+                            <li>Wrote a detailed algorithm for a complex problem</li>
+                            <li>Learned the act of active and detailed documentation of my journey, experience, decision, assumptions when developing algorithms and systems whether personal or shared.</li>
                         </ul>
-                        These exercises equipped me with communication skills which I think are essential for every individual, especially those that will be contributing technically to social problems. Detailed and proper documentation makes it easier for me or any other person to be able to pick up my project, understand my thoughts and design process, and modify it accordingly - it is like a letter to someone in the future (it can be oneself). As I go on to tackling social problems, I see myself applying this in my algorithm design process, when coding, and communicating or sharing my work with others. 
+                        These exercises equipped me with communication skills which I think are essential for every individual, especially those that will be contributing technically to social problems. Detailed and proper documentation makes it easier for me or any other person to pick up my project, understand my thoughts and design process, and modify it accordingly - it is like a letter to someone in the future (it can be oneself). As I go on to tackling social problems, I see myself applying this in my algorithm design process, when coding, communicating or sharing my work with others. 
                     </div>
                 </div>
             </div>
