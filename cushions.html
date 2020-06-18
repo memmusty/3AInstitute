@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="questionFraming.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -44,7 +44,13 @@
                         
                         <h3 style="margin: 1rem 0em;" >Introduction</h3>
                         This is an imagined future storytelling CPS by me and my teammate Teffera, where cushions and humans are the central part of it. The title "Moonlight Tales" was gotten from the traditional African storytelling culture where stories and history are passed down in a family or community for generations. It usually involves the adults gathering children together to tell them stories in the night - under the moonlight. This is popularly known as <i>Tales by Moonlight.</i> Interestingly, even though there are variations, this culture is ubiquitous. In trying to build a technology that brings people together, we also wanted it to be something that everyone can relate with; this is how the Moonlight Tales was invented.
-                        
+
+                        <h3 style="margin: 1rem 0em;" >The Unveiling</h3>
+                        <iframe src="https://player.vimeo.com/video/430430863" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        <p>
+                            <a href="https://vimeo.com/430430863">Unveiling Moonlight Tales - An Cyber-Physical Storytelling System</a>.
+                        </p>
+
                         <h3 style="margin: 1rem 0em;" >The Placard</h3>
                         <div style="border: 0.25em solid #B24C53; padding: 1rem; margin: 1rem;">
                             <p>
@@ -65,6 +71,47 @@
                                     </li>
                                 </ul>
                             </p>
+                        </div>
+
+                        <h3>System Requirements</h3>
+                        For us to upgrade a set of cushions and a display screen into a CPS, the following are required: 
+                        <ul>
+                            <li>Sensors - fibre optic sensors, sound sensor, motion sensor - to collect data from its physical environment and humans</li>
+                            <li>Data- heartbeat via respiration, audio recording, motion, stories, speech</li>
+                            <li>Internet of Things (IoT) – a network of physical objects (cushions) - that are embedded with sensors, software, and other technologies connected over the internet.</li>
+                            <li>Data storage - where the collected data, signals, and processed data are stored.</li>
+                            <li>Machine learning cloud server – to analyse and make sense of the data at scale.</li>
+                            <li>Data analytics and machine learning algorithms - to make sense of the collected data, we need machine learning algorithms that can use audience physical data like heartbeats, motion, and sound to modify their delivery of stories and audio-visual experiences in real-time; including speech recognition algorithms.</li>
+                            <li>Controller program or software – to control the system’s operations. It receives data collected by the sensor and instructs the actuators accordingly.</li>
+                            <li>Microcontroller - like Arduino - to connect the physical components like the sensors and the screen to the internet.</li>
+                            <li>Actuators - storytelling devices (advanced = an audio-visual electronic/holographic display OR minimum viable experience = audio speakers) – acts on the system’s physical environment as instructed by the controller.</li>
+                            <li>Network – Internet, Wi-Fi module, Bluetooth module - connects the system’s components (hardware and software) to one another and to external systems (like Twitter).</li>
+                            <li>Humans – The system is a human-centric one; humans are needed in the system for there to be feedback loop between the physical and digital world.  Humans create the signals or data the sensors capture, and the screen tries to tell stories to humans.</li>
+                        </ul>
+                        For the system to scale, in addition to the aforementioned components, we will need:
+                        <ul>
+                            <li>Electricity supply</li>
+                            <li>Internet connection</li>
+                            <li>Business analysts, market researchers, anthropologists, etc – to help us understand the users, their needs, feasibility studies; and to help in defining and designing the system</li>
+                            <li>Storytelling experts, media and entertainment experts, and stories curators (crowdsourcing with curative layer possible)</li>
+                            <li>Machine learning engineers</li>
+                            <li>Data security and privacy experts</li>
+                            <li>A knowledge of the ethics protocols required to building this system for the public.</li>
+                            <li>Collaboration and permission of the authorities of the public places</li>
+                            <li>Installation Engineers.</li>
+                            <li>Language interpreter – to tell a story to diverse audience in their preferred language</li>
+                        </ul>
+
+                        <h3>The Requirements Map</h3>
+                        <div class="row">
+                            <figure class="col-lg-10" >
+                                <img class="img img-fluid" src="assets/img/demo-cushion-map.png" alt="" />
+                                <figcaption><em>A map of the system requirements</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-2" >
+                                <img class="img img-fluid" src="assets/img/demo-cushion-inside.jpg" alt=""/>
+                                <figcaption><em>Inside the cushion</em></figcaption>
+                            </figure>
                         </div>
 
                         <h3>System Design Agenda</h3>
@@ -96,35 +143,6 @@
                         <p>
                             After presenting the first draft to the class, the feedback from the cohort made us we realise our prototype is missing some details about how the system functions and how the components interact with each other to create the experience; we also needed to make the fact that our data is not collecting identifying data about the users. We worked on that by rearranging the components in the requirements map to be clearer and show the flow of data and signals as seen in the images below. We also made explicit the data we are collecting – the heartbeat and motion data – to make it clear that no identifying data of the audience is collected by the system. The feedbacks also informed some additional non-technical requirements of the system.
                         </p>
-
-                        <h3>System Requirements</h3>
-                        For us to upgrade a set of cushions and a display screen into a CPS, the following are required: 
-                        <ul>
-                            <li>Sensors - fibre optic sensors, sound sensor, motion sensor - to collect data from its physical environment and humans</li>
-                            <li>Data- heartbeat via respiration, audio recording, motion, stories, speech</li>
-                            <li>Internet of Things (IoT) – a network of physical objects (cushions) - that are embedded with sensors, software, and other technologies connected over the internet.</li>
-                            <li>Data storage - where the collected data, signals, and processed data are stored.</li>
-                            <li>Machine learning cloud server – to analyse and make sense of the data at scale.</li>
-                            <li>Data analytics and machine learning algorithms - to make sense of the collected data, we need machine learning algorithms that can use audience physical data like heartbeats, motion, and sound to modify their delivery of stories and audio-visual experiences in real-time; including speech recognition algorithms.</li>
-                            <li>Controller program or software – to control the system’s operations. It receives data collected by the sensor and instructs the actuators accordingly.</li>
-                            <li>Microcontroller - like Arduino - to connect the physical components like the sensors and the screen to the internet.</li>
-                            <li>Actuators - storytelling devices (advanced = an audio-visual electronic/holographic display OR minimum viable experience = audio speakers) – acts on the system’s physical environment as instructed by the controller.</li>
-                            <li>Network – Internet, Wi-Fi module, Bluetooth module - connects the system’s components (hardware and software) to one another and to external systems (like Twitter).</li>
-                            <li>Humans – The system is a human-centric one; humans are needed in the system for there to be feedback loop between the physical and digital world.  Humans create the signals or data the sensors capture, and the screen tries to tell stories to humans.</li>
-                        </ul>
-                        For the system to scale, in addition to the aforementioned components, we will need:
-                        <ul>
-                            <li>Electricity supply</li>
-                            <li>Internet connection</li>
-                            <li>Business analysts, market researchers, anthropologists, etc – to help us understand the users, their needs, feasibility studies; and to help in defining and designing the system</li>
-                            <li>Storytelling experts, media and entertainment experts, and stories curators (crowdsourcing with curative layer possible)</li>
-                            <li>Machine learning engineers</li>
-                            <li>Data security and privacy experts</li>
-                            <li>A knowledge of the ethics protocols required to building this system for the public.</li>
-                            <li>Collaboration and permission of the authorities of the public places</li>
-                            <li>Installation Engineers.</li>
-                            <li>Language interpreter – to tell a story to diverse audience in their preferred language</li>
-                        </ul>
 
                         <h3>What Informed Our Futuristic Cushion Design?</h3>
                         <ul>
