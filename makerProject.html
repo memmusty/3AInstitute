@@ -46,12 +46,12 @@
                         
                         <h3>Introduction</h3>
                         <p>
-                            This page provides a presentation of an intelligent crossroad traffic control system  I developed as my maker project in the first semester of CECS8001, and my challenges as I progressed in building it. The maker project was aimed at building a system that is  related to the new branch of engineering, solves a problem we are motivated about, learn new skills while at it. I decided to build computer-vision based traffic controller because of my experience with with the limitations of timer based traffic controllers in Lagos, Nigeria. Also, I was excited to experiment with and build on my machine learning and computer electronics skills. Applying the skills I learned over the semester, I developed an autonomous real-time computer-vision based traffic controller that controls traffic based on the sensed current state of the traffic. 
+                            This page provides a presentation of an intelligent crossroad traffic control system  I developed as my maker project in the first semester of CECS8001, and my challenges as I progressed in building it. The maker project was aimed at building a system that is  related to the new branch of engineering, solves a problem we are motivated about, learn new skills while at it. I decided to build computer-vision based traffic controller because of my experience with the limitations of timer-based traffic controllers in Lagos, Nigeria. Also, I was excited to experiment with and build on my machine learning and computer electronics skills. Applying the skills I learned over the semester, I developed an autonomous real-time computer-vision based traffic controller that controls traffic based on the sensed current state of the traffic. 
                         </p>
 
                         <h3>Motivation: Traffic Congestion in Lagos</h3>
                         <p>
-                            Lagos is one of the most congested cities in the world with approximately 13 million inhabitants in 2015 - most of which are cars owners and youths. Even in the presence of traffic warden and timer based traffic lights on every road, there is rarely a time where Lagos main roads are not congested with residents in cars, buses, tricycles, bikes, etc. As a working resident, there are days I had spent approximately 2 hours on a spot (seated in a bus) in the traffic. On an average, I spend a total of 5 hours on the road to and from my workplace daily - that is, if am able to avoid a really congested traffic. Lagos is tagged the third most stressful city in the world - some will say Lagos traffic is a tourist attraction on its own.
+                            Lagos is one of the most congested cities in the world with approximately 13 million inhabitants in 2015 - most of which are cars owners and youths. Even in the presence of traffic warden and timer-based traffic lights on every road, there is rarely a time where Lagos main roads are not congested with residents in cars, buses, tricycles, bikes, etc. As a working resident, there are days I had spent approximately 2 hours on a spot (seated in a bus) in the traffic. On an average, I spend a total of 5 hours on the road to and from my workplace daily - that is, if am able to avoid a really congested traffic. Lagos is tagged the third most stressful city in the world - some will say Lagos traffic is a tourist attraction on its own.
                         </p>
                         <p>
                             This increasing traffic congestion has posed lots of troubles and challenges for Lagosians which includes:
@@ -62,7 +62,7 @@
                                 <li>In cases of emergencies, a serious gridlock can result in loss of lives.</li>
                                 <li>Missed opportunities like job interviews, business meetings, flight schedule etc.</li>
                             </ul>
-                            In addition to these, the timer based traffic controller is usually is insensitive to unpredicted traffic scenarios and controls the traffic blindly. These motivated me build an intelligent traffic controller that can effectively replace the timer based ones. The developed traffic light functions as seen below.
+                            In addition to these, the timer-based traffic controller is usually is insensitive to unpredicted traffic scenarios and controls the traffic blindly. These motivated me build an intelligent traffic controller that can effectively replace the timer-based ones. The developed traffic light functions as seen below.
                             <iframe src="https://player.vimeo.com/video/430589280" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                         </p>
                         <h3>Key Skills and Components</h3>
@@ -102,7 +102,7 @@
                         <p>
                             This activity was guided by the detailed instructions for setting up the Raspberry Pi on the <a href="https://projects.raspberrypi.org/en/projects/raspberry-pi-getting-started">getting started</a>. The activity went as follows:
                             <ul>
-                                <li>Downloaded the Raspberry Pi <a href="https://www.raspberrypi.org/downloads/">Imager</a> for Windows and usesd the imager to Install Raspbian on my SD card</li>
+                                <li>Downloaded the Raspberry Pi <a href="https://www.raspberrypi.org/downloads/">Imager</a> for Windows and used the imager to Install Raspbian on my SD card</li>
                                 <li>Inserted the SD card Raspberry pi to install the Raspbian Operating System (OS), connected the monitor, keyboard, mouse, pi camera, and ethernet cable to their respective ports, then connected electrical power to pi via USB cable.</li>
                                 <figure class="col-lg-6" >
                                     <img class="img img-fluid" src="assets/img/demo-raspbian-install.jpg" alt="" />
@@ -126,7 +126,7 @@
                             <li>Read the <a href="Gpiozero.readthedocs.io/en/stable/recipes.html">GPIO documentation to get familiar with the GPIO LED built-in funtions</a></li>
                             <li>Made a simple traffic light controller with a green, a red and a yellow LED and blinked them sequentially</li>
                             <li>Progressed to assemble 12 LEDs on the breadboard and connect them to pi GPIO pins </li>
-                            <li>Wrote the code for the timer based traffic controller</li>                         
+                            <li>Wrote the code for the timer-based traffic controller</li>                         
                         </ul>
                         <div class="row">
                             <figure class="col-lg-4" >
@@ -145,14 +145,14 @@
                         The image below is the circuit's design. It illustrates the LEDs', resistors', and the GPIO pins connections in the traffic light system circuitry.
                         <figure class="col-lg-8" >
                             <img class="img img-fluid" src="assets/img/demo-traffic-model.jpg" alt="" />
-                            <figcaption><em>The ciruit design of the system</em></figcaption>
+                            <figcaption><em>The circuit design of the system</em></figcaption>
                         </figure>
                         <h5>Challenges and (Re)solutions</h5>
                         <ul>
                             <li>Although, I had read and comprehended the GPIO pins configuration, and I knew the LEDs power requirement is 3.3V-5V. However, connecting the LEDs to the 5V pin zapped them. It took burning out 3 LEDs to realize this, and made me decide to sick to 3.3V.</li>
                             <li>When I connected the 3 LEDs to pi, the LEDs wouldn't light up, this I discovered was due to the fact that I mixed up my connections to power and ground while connecting the LEDs (connected the wire for ground to power and vice versa). Undoing that made the circuit work as expected.</li>
                             <li>Also, I noticed one of the LED's light was faint, after playing around with positions of the LEDs, I discovered this happened to LEDs connected to a particular resistor, changing the resistor brightened up the LEDs. This was a 1k resistor while others were 220R</li>
-                            <li>Progressed to assmeble 12 LEDs (4 red, 4 green, 4 yellow) for the 4-way crossroad light control</li>
+                            <li>Progressed to assemble 12 LEDs (4 red, 4 green, 4 yellow) for the 4-way crossroad light control</li>
                         </ul>
 
                         <h4>Traffic Controller Algorithm</h4>
@@ -169,14 +169,14 @@
                         To enable the system to be able to "see" what's happening in real-time, I needed it to deploy computer vision algorithms. Even though I had no computer-vision experience prior to this, I was able to achieve this; but not without its frustrating challenges.
                         <h5>Challenges and (Re)solutions</h5>
                         <ul>
-                            <li><b>Training model from scratch</b> - to build a machine learning model from scratch, I needed to:
+                            <li><b>Training a model from scratch</b> - to build a machine learning model from scratch, I needed to:
                                 <ul>
                                     <li>Gather images of cars and traffic, prepare them (crop, label and annotate them), split them into train and test sets. Training really good models will require thousands of images, preparing thousands of images sounded like a lot for me to do in a short period.</li> 
                                     <li>Build the model and export it for deployment. To build the model, I needed to choose between Keras, Pytorch, Tensorflow, Fast.ai, etc., all of which I was not familiar with. Where do I start learning these and how do I decide which I best for me?</li>
                                 </ul>                               
                                 These made me decide to explore pre-trained models and optimize them for my project.
-                                <li><b>Working with Yolo3 Model</b> - after reading tons of articles, watching overwhelming tutorial videos and exploring github repositories, I was able to set up my Raspberry pi for image processing by following this <u><a href="https://www.youtube.com/watch?v=H7k1YApU0pg">guide</a></u>, then I tested it and learned the principles of object detection <u><a href="https://www.youtube.com/watch?v=VF8M9DdZ_Aw">here</a></u>. Afterwards, I came across <a href="https://towardsdatascience.com/count-number-of-cars-in-less-than-10-lines-of-code-using-python-40208b173554">this article</a> where I can detect and count the cars in an image in <b>10 lines of Python code!</b></li> 
-                                This and other Yolo guides I found worked perfectly in Google colab as seen in the below images.
+                                <li><b>Working with Yolo3 Model</b> - after reading tons of articles, watching overwhelming tutorial videos and exploring Github repositories, I was able to set up my Raspberry pi for image processing by following this <u><a href="https://www.youtube.com/watch?v=H7k1YApU0pg">guide</a></u>, then I tested it and learned the principles of object detection <u><a href="https://www.youtube.com/watch?v=VF8M9DdZ_Aw">here</a></u>. Afterwards, I came across <a href="https://towardsdatascience.com/count-number-of-cars-in-less-than-10-lines-of-code-using-python-40208b173554">this article</a> where I can detect and count the cars in an image in <b>10 lines of Python code!</b></li> 
+                                This and other Yolo guides I found worked perfectly in Google Colab as seen in the below images.
                                 <br/>
                                 <div class="row">
                                     <figure class="col-lg-6" >
@@ -196,17 +196,17 @@
                                 </ul>
                                 Discussing this individually with Sam, Zena, Johan, Rodolfo, and Victor brought up suggestions like:
                                 <ul>
-                                    <li>Transferring the captured images to Google Colab for machine learning processing, and sending the number of cars to Raspberry pi. However, I couldn't figure out how to make Google Colab detect that new images have been uploaded. Also, this will require the system to work online in constrast to my plan of having an offline solution</li>
+                                    <li>Transferring the captured images to Google Colab for machine learning processing, and sending the number of cars to Raspberry pi. However, I couldn't figure out how to make Google Colab detect that new images have been uploaded. Also, this will require the system to work online in contrast to my plan of having an offline solution</li>
                                     <li>Reducing the images sizes and make the image black and white - Tried it, didn't work. The issues were with the model itself, not the images.</li>
                                     <li>Setting up a machine learning server -  this will require constant connection to the internet.</li>
-                                    <li>Restarting the project afresh - I uninstalled raspbian and wiped the SD card and started afresh.</li>
+                                    <li>Restarting the project afresh - I uninstalled Raspbian and wiped the SD card and started afresh.</li>
                                     <li>Using lite versions of the models - I never knew Tensorflow model had lite versions! Since I was starting afresh, I decided to try out TensorFlow Lite</li>
                                 </ul>
                             </li>
                         </ul>
                         <h4>Working with Tensorflow Lite Models</h4>
                         <p>
-                            In this phase, I created a virtual environment in Pi (to avoid having to restart) and installed TF Lite there - at this point, Johan had also given me Google Coral Edge TPU USB Accelerator to help accelerate my machine learning processes. I was able to set up TF Lite and the USB Accelerator following this <u><a href="https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi">guide</a></u>, and I was able to classify images with it in seconds. However, I wanted to detect objects in images and not classify the images and following <a href="https://github.com/google-coral/tflite/tree/master/python/examples/detection">this guide</a> from Coral's github page only resulted in errors.
+                            In this phase, I created a virtual environment in Pi (to avoid having to restart) and installed TF Lite there - at this point, Johan had also given me Google Coral Edge TPU USB Accelerator to help accelerate my machine learning processes. I was able to set up TF Lite and the USB Accelerator following this <u><a href="https://github.com/tensorflow/examples/tree/master/lite/examples/image_classification/raspberry_pi">guide</a></u>, and I was able to classify images with it in seconds. However, I wanted to detect objects in images and not classify the images and following <a href="https://github.com/google-coral/tflite/tree/master/python/examples/detection">this guide</a> from Coral's Github page only resulted in errors.
                         </p>
                         <p>
                             Hours/Days of surfing the internet led me to this <a href="https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/Raspberry_Pi_Guide.md">detailed guide</a> from Edge Electronics on how to run TensorFlow Lite object detection models on the Raspberry Pi using their sample code. I decided to work with the MobileNet SSD model from <a href="https://coral.ai/models/">coral models list</a> as it was optimized to perform object detection on microprocessors like Raspberry pi, and it can detect up to 90 objects. Running the model on a traffic image resulted in the below image.
@@ -236,7 +236,10 @@
                                 <img class="img img-fluid" src="assets/img/demo-model-output.jpg" alt="" />
                                 <figcaption><em>Object detection model output.</em></figcaption>
                             </figure>
-                        </div>                        
+                        </div> 
+                        Below is a video that captured my excitement when the model finally worked as expected after so many attempts and modification! Haha.  
+                        <br/>   
+                        <iframe src="https://player.vimeo.com/video/430588953" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> 
 
                         <h3>Takeaway Lessons</h3>
                         <ul>
@@ -246,15 +249,31 @@
                             <li>When faced with deciding which of really overwhelming list of resources to use, go with the one that is more understandable - have been designed for people at your level of expertise.</li>
                             <li>Avoid the temptation of avoid the seemingly difficult approach or giving up on it while trying or trying out every solution to solving a problem. Pick one, see it through to the end before trying another approach.</li>
                         </ul>
+
                         <h3>Achievement</h3>
                         At the end of the activities, I:
                         <ul>
-                            <li>Learned how to download datasets from Kaggle to Google Drive and make it accessible in Google colab for processing while trying to train my models from scracth, I .</li>
-                            <li>Understood the basic principles of image processing and object detection and know the difference between image classification and object detection</li>
+                            <li>Built an intelligent traffic control system that processes images with computer vision technologies offline.</li>
+                            <li>Learned how to create circuit design models and created one for the system's circuit</li>
+                            <li>Understood the basic principles of machine learning, image processing and object detection and know the difference between image classification and object detection</li>
                             <li>Learned how to set up Raspberry pi, TensorFlow runtime, Coral USB accelerator create python virtual environment.</li>
+                            <li>Deployed object detection models in Raspberry pi and also modified their outputs</li>
                             <li>Know how to program and control LEDs with Raspberry pi</li>
+                            <li>Am more familiar with deep learning frameworks like Tensorflow and computer vision models.</li>
+                            <li>Learned how to download datasets from Kaggle to Google Drive and make it accessible in Google Colab for processing while trying to train my models from scratch</li>
+                            <li>Learned about traffic control systems in deployment, how they are controlled and maintained.</li>
                         </ul>
                         
+                        <h3>Limitations and Future works</h3>
+                        <ul>
+                            <li>The current system does not has no memory of its previous passes - if one traffic continues having the most cars, it continues passing the traffic until it becomes less than some other traffic. I will like to update it to limit its number of consecutive passes for a traffic</li>
+                            <li>In this system, the images is not processed instantaneously. It does this while the traffic is waiting for the next pass</li>
+                            <li>The current model's accuracy is really low. I intend to learn more about deep learning and how to train models so I can build a suitable model for the system.</li>
+                        </ul>
+
+                        <p>
+                            Overall, working on the maker project gave me an experience that involved exploiting all the skills I have learned so far which includes - coding in Python, circuitry and sensors, data collection and analysis, networking, machine learning; and framing questions about future cyber-physical systems, their scalability, reliability and ethics. Documenting my challenges and achievements, helped me in reflecting on my progress and in communicating it to others.
+                        </p>
                         <h3>Learning Resources</h3>
                         Below is a list of the links I learned from as I worked toward creating the traffic light:
                         <ul>
