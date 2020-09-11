@@ -10379,3 +10379,11 @@ body {
 em {
   font-size: 0.7rem;
 }
+
+#projects{
+  list-style-type: '★';
+}
+
+#projects ul li::before {
+  color: #B24C53;
+}
