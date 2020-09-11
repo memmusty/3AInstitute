@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Build - Circuit and Sensors</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Memunat I.</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="build.html#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#activities">Activities</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="project-text">
+                        <h1>System Analysis</h1>
+                        <hr class="d-none d-lg-block mb-4 ml-0" />
+                        <!--
+                        <div class="col-lg-12">
+                            <img class="img-fluid" src="assets/img/demo-image-sensor.jpg" alt="" />
+                        </div>
+                        <br/>
+                        -->
+                        <h3>Introduction</h3>
+                        <p>
+                            As practitioner in the New Branch of Engineering (NBE) - Applied Cybernetics who will constantly be questioning, building and investigating systems, the importance of system analysis cannot be overemphasized. In system analysis, we get to frame research questions about systems, model systems behavior and experiment on systems amongst others.<br/>
+                            This page provides a description of my experience conducting evidence-based system analysis on my fridge; the experiment was conducted to explore the fridge behavior relative to the number of items placed in it at a time. In other words, to explore the effect the number of items added in the fridge has on the fridge cooling time. A documentation of the process from framing a research question to analyzing the experiment results is provided here. A detailed reflection on the challenges, decision process, skills and lessons learned, and achievement is also covered in this piece.
+                        </p>
+                        <h3>Achievement</h3>
+                        At the end of the activities, I learned how to:
+                        <ul>
+                            <li>Frame scientific research questions.</li>
+                            <li>Create dynamic system models using causal loop diagrams</li>
+                            <li>Perform experiments to explore research questions</li>
+                            <li>Document and present results of scientific researches in system analysis reports</li>
+                        </ul>
+                        <h3>Prerequisite Knowledge and Learning resources</h3>
+                        In preperation for the system analysis, I:
+                        <ul>
+                            <li>Refreshed my knowledge on the concept of Systems thinking and causal loop reading chapter 1 of 'The Basics in Thinking in System: A Primer' by Donella H. Meadows.</li>
+                            <li>Learned how to construct influence and causal loop  diagrams in details by reading Proust K, and Newell B.'s 'Constructing Influence Diagrams & Causal Loop Diagrams'</a></li>
+                            <li>Learned the concept of stock and flow diagrams in details reading Aronson, D. & Angelakis, D's 'Step-by-step stocks and flows: Improving the rigor of your thinking.' <a href="https://thesystemsthinker.com/step-by-step-stocks-and-flows-improving-the-rigor-of-your-thinking">here</a></li>
+                            <li>Learned how to convert causal loop diagram (CLD) to stock and flow diagrams reading Aronson, D. & Angelakis, D's 'Step-by-step stocks and flows: Converting from causal loop diagrams.' The Systems Thinkier.<a href="https://thesystemsthinker.com/step-by-step-stocks-and-flows-converting-from-causal-loop-diagrams/">here</a></li>
+                            <li>Learned how to use <a href="https://ncase.me/loopy/">LOOPY</a> and <a href="https://insightmaker.com/">Insight Maker</a> to model dynamic system behaviors</li>
+                        </ul>
+                        <h3>Key Skills and Components</h3>
+                        <ul>
+                            <li>LG GR-A207CTBA refrigerator – set to -230C freezer control: the system to be analyzed</li>
+                            <li>Circuit playground express (CPE) onboard thermistor: for sensing the Fridge temperature</li>
+                            <li>A 3 x AAA Battery Holder with On/Off Switch and 2-Pin JST: to supply power to the CPE</li>
+                            <li>3 PKCell 1.5V Ultra alkaline batteries</li>
+                            <li>A USB Cable: to connect the CPE to my laptop</li>
+                            <li>Laptop</li>
+                            <li>Stop watch: to track the experiment time</li>
+                            <li>Note: to document the system's state at a time</li>
+                            <li>Food items: placed incrementally in the fridge</li>
+                            <li>Python code: to log the Fridge temperature in a csv file</li>
+                            <li>Tableau Desktop: to analyze the logged data</li>
+                            <li>LOOPY: to model the system's behavior in CLD</li>
+                            <li>Insight Maker: to model the system's behavior using stock and flow diagram</li>
+                        </ul>
+                        <h3 id="activities">Activities</h3>
+                        <h4>Framing Research Question</h4>
+                        <p>
+                            In system analysis, having a research question helps to formally define the purpose of the analysis and serves as a guide to the researcher throughout the analysis process. I preceeded the analysis with crafting a research question about the fridge behavior. To do that, I had to first figure out what aspect of the fridge am I interested in? What is the analysis boundary? Does I treat the Fridge as a subsystem or as a system of systems? What's the research intent and purpose? Having a research question does not only answer these questions but also guide the research.
+                        </p>
+                        <p>
+                            I was interested in how Fridges react internally to the addition of new items into it. I could have asked the question - "Does the number of items in the Fridge affects its behaviors?" However, that wouldn't make a good research question as research questions have to be clear, focused, obvious, not a yes or not question and researchable with the tools and time I have. Having considered these key questions, I framed the research question as <q><i>How does the number of items placed in the fridge affect the time it takes the fridge to return to its base temperature</i></q>
+                        </p>
+                        <h4>Modeling the Assumed Fridge Behavior</h4>
+                        <p>
+                            Even though we (researchers) like to believe we approach researches from an objective standpoint, we mostly have an assumption of the system behavior before the research. How do we document and communicate our assumption, and ensure it doesn't influence us nor the research? In systems thinking, systems map can be created to capture dynamic system's behavior; this can be done with causal loop diagrams, stock and flow diagrams, etc. Systems maps are not only handy in communication our assumptions, they can also be used in  illustrating and communicating the research finding to broad audiene. 
+                        </p>
+                        <p>
+                            Having defined my research question, I created a system map to capture areas of the system that I assume are of interest to the analysis, and to communicate my assumptions of how the system works and validate it prior to the experiment. I created a CLD communicating my assumption of the Fridge behavior relative to the items in it as depicted below. The CLD can be found <a href="https://bit.ly/2Zn9Mli">here</a>
+                            <div class="row">
+                                <figure class="col-lg-10" >
+                                    <img class="col-lg-10" src="assets/img/demo-fridge-cld.gif" alt="" />
+                                    <figcaption><em>A system map depicting my assumptions of the system's behavior</em></figcaption>
+                                </figure>
+                            </div>
+                            This map obviously does not capture every aspect of the system, it captured just what I thought are relevant. It reminded me of the saying - <q>All models are wrong, but some are useful</q>. Even though I think this map is useful for my analysis, there are other context where it will be useless, making it important to make explicit our assumptions as we create system models and their limitations or area of relevance.
+                        </p>
+                        <h4>Experimenting on the Fridge</h4>
+                        <p>
+                            The experiment was conducted in an empty freezer because it is smaller (a more controlled environment) and cooler, and the temperature can easily be influenced compared to the bigger spaced fridge. The experiment was conducted in the freezer for approximately 1.5 hours during which the freezer was opened only 5 times. The first and last opening was to place the CPE in the freezer and to remove it at the beginning and the end of the experiment respectively, the 3 times it was opened in-between was to place new items in the freezer. The CPE was first placed in the empty freezer for 20mins at 13:30, so the CPE itself can cool to the fridge internal temperature and its temperature (which was the room temperature before it was in the fridge) won’t affect the internal temperature it records. Iteratively, after every 20 mins, the fridge is opened for 30secs to empty its content and place increasingly new items in it. Items were iteratively placed in the Fridge 4 times.
+                        </p>
+                        <div class="row">
+                            <figure class="col-lg-6" >
+                                <img class="img img-fluid" src="assets/img/demo-fridge-log.jpg" alt="" />
+                                <figcaption><em>An image of the freezer during the 4th iteration</em></figcaption>
+                            </figure>
+                            <figure class="col-lg-6" >
+                            <img class="img img-fluid" src="assets/img/demo-battery-CPE.jpg" alt="" />
+                            <figcaption><em>An image of the CPE connected to the battery pack</em></figcaption>
+                            </figure>
+                        </div>
+                        <h5>Assumptions Made</h5>
+                        <p>
+                            Since the only behavior of interest was how the number of items placed in the fridge affects the time it takes the fridge to cool, it was assumed that:
+                            <ul>
+                                <li>The fridge’s current and power consumption is constant</li>
+                                <li>The time taken to insert items in the fridge is constant – ensured by opening the fridge for equal amount of time irrespective of the number of items involved.</li>
+                                <li>The base temperature of the fridge is constant throught the experiment</li>
+                                <li>The room temperature is constant throughout the experiment</li>
+                                <li>The items’ initial temperature is equal to the room temperature</li>
+                            </ul>
+                            Hence, only the room temperature, the number of items in the fridge, and the fridge internal temperature over time were observed.
+                        </p>
+                        <h4>Analyzing Observed Data</h4>
+                        <p>
+                            At the end of the experiment, only 360 temperature data was logged in the csv file - only the first 3 iterations was captured. <i>The logged data is incomplete</i>. The csv file was imported into Tableau for data analysis. The trend of the freezer’s temperature during the experiment is illustrated in the below figure. The chart begins with the thermistor recording the room temperature at 17.920C which dropped sharply (decreasingly) to the internal freezer temperature until it got to around 10C; after which the temperature slowly drops. 
+                        </p>
+                        <div class="row">
+                            <figure class="col-lg-12" >
+                                <img class="img img-fluid" src="assets/img/demo-experiment-chart.png" alt="" />
+                                <figcaption><em>A line chart illustrating the freezer internal temperature trend during the experiment</em></figcaption>
+                            </figure>
+                        </div>
+                        <p>
+                            Interestingly, there is an observed rise in the freezer’s temperature approximately 1200s and 2400s which are approximately 20mins and 40mins respectively into the experiment – the times the freezer was opened for the iteration 2 and 3. It can also be observed that opening the freezer at both points for 30secs led to an increase in the internal temperature to approximately -1.70C and -2.20 C. The chart also shows that opening the freezer increases the temperature by a close range irrespective of the temperature of the freezer before it was opened.
+                            It can also be observed that it took approximately 7mins for the freezer to start experiencing a continuous decline in temperature after the first iteration, which appears to take a longer time in the second iteration. 
+                        </p>
+                        <h4>Conclusions</h4>
+                        <p>
+                            From the chart above, it can be concluded that opening the Fridge results in lost of the Fridge's internal temperature. Also, considering the observed temperature of the fridge when it was opened the first and second time, it seems the number of items placed in the Fridge does not affect the time it takes the fridge to return to its base temperature. However, due to the incomplete nature of the data collected, conclusions about the system behavior cannot be drawn from the data. It will have been easier to recognize patterns in the system if the 4th iteration data wasa covered, since the first iteration was merely for placing the CPE in the fridge.
+                        </p>
+                        <p>
+                            Prior to the main experiment, a trial experiment was conducted to observe how low the freezer’s temperature can get. The CPE was placed in the freezer for 56mins and a total of 344 datapoints were recorded. As shown in Fig 2 below, the logged temperature of the sensor started increasing after a temperature as low as 10.37 was recorded; this is an interesting behavior exhibited by the fridge. Does the CPE heat itself to regulate its temperature? Did someone else opened the fridge while I was away?
+                        </p>
+                        <div class="row">
+                            <figure class="col-lg-12" >
+                                <img class="img img-fluid" src="assets/img/demo-trial-result.png" alt="" />
+                                <figcaption><em>A line chart illustrating the freezer internal temperature trend before the experiment</em></figcaption>
+                            </figure>
+                        </div>
+                        <h3>Challenges and Limitations</h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    <b>Modeling with CLDs</b>: because CLDs can only have state variables in them, it bacame difficult to model variables that I thought are relevant to the system behavior but aren't state variables. Also, some of the relationships in the map are more complex than they appear which makes using stock and flow diagrams more suitable as it captures complex system dynamics better.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Incomplete entries</b>: The CPE only recorded the freezer’s internal temperature in the first 1-hour in. This was due to the limitation in the Python code that it only records maximum of 360 entries in the sheet. Hence, only 1 of 1.5 hours of freezer’s internal temperature was recorded during the experiment
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Logged Temperature accuracy:</b> the CPE thermistor is an NTC thermistor (Murata NCP15XH103F03RC) with a 10K resistor connected to it as a pull down. This means the temperature measured by it may not the absolute temperature value.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Use of Proxy Time:</b> The CPE can’t measure the exact time stamp as in dd/mm/yy MM:HH so time is measured as a function of the time difference in seconds between when the temperature was recorded and when the experiment started. The recorded times are approximations.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Inconclusiveness due to uncertainties in the environment:</b>  The lowest temperature observed was logged when the CPE was left in the freezer for a long time in the trial experiment. After which an increase in the temperature was observed even though I didn't open the fridge. However, because I wasn't present at that time, I couldn’t conclude if the observed behavior was caused by the fridge, or the sensor, or due to the fridge being opened by another person.
+                                </p>
+                            </li>
+                        </ul>
+                        <h3>Takeaway Lessons</h3>
+                        <ul>
+                            <li>One experiment is not enought to understand causalities or draw conclusions about systems with varying variables or experiments conducted in semi-controlled environment</li>
+                            <li>In future experiments, I will try to ensure other factors or variables aside those that are relevant to the research questions are eliminated or kept constant to avoid confusion about causalities, resulting in Inconclusiveness</li>
+                            <li>Keep track of start time and end time of experiments and their phases, especially in time sensitive experiment. I learned this from not noting the time in prior experiments, thereby making it difficult to make sense of the logged data; I needed to relate them to the time they were logged but I couldn’t.</li>
+                            <li>Conducting an experiment to test a hypothesis is an iterative process, the more experiments I conducted, the more refined the experiment design became. It is advisable to have a trial experiment before the main experiment</li>
+                            <li>Keep the experiments as simple as possible and isolate the experiment environment; making experiments unnecessarily complex only complicates it.</li>
+                            <li>Always document my decisions, actions, and their timestamp! in details.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-globe text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Website</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">https://memmusty.github.io/3AInstitute/</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">memunati@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-linkedin text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">LinkedIn</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="https://www.linkedin.com/in/memunat-ajoke-ibrahim/m">Memunat Ajoke Ibrahim</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.linkedin.com/in/memunat-ajoke-ibrahim/"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" href="https://github.com/memmusty/"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://twitter.com/_memunat_"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/memunatj"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © MemunatI. 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
