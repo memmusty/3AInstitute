@@ -43,7 +43,7 @@
                         <h3>Introduction</h3>
                         <p>
                             Machine learning models are the key components of any AI driven systems. Given that cyber-physical systems are powered by AI, hence ML, there is a necessity as a practitioner of Applied Cybernetics to understand what goes on in machine learning models. Are they really black boxes? Can they go totally out of control? What are machine learning models and what aspect of these model might be of interest of practitioner of the NBE when exploring CPSs?
-                            In my attempt to understand machine learning models, I tried to build a decision tree model from scratch. This was my way of tearing the model apart and "seeing" how it work and make predictions.<br/>
+                            In my attempt to understand machine learning models, I tried to build a decision tree model from scratch on the <a href="http://archive.ics.uci.edu/ml/datasets/Zoo?ref=datanews.io">UCI zoo dataset</a>. This was my way of tearing the model apart and "seeing" how it work and make predictions.<br/>
                             This page provides a documentation of my journey trying to "tear ML models apart" and then build it from scratch. I will be discussing my progress, challenges, decision process and my thoughts on my approach to understanding ML models. Is it effective to build ML models from scratch? Are there other efficient ways to understanding ML models?
                         </p>
                         <h3>Achievement</h3>
@@ -57,20 +57,67 @@
                         <h3>Prerequisite Knowledge and Learning resources</h3>
                         In preperation for the system analysis, I:
                         <ul>
-                            <li></li>
+                            <li>Read this <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-1/">introductory tutorial</a> to decision trees, branches, split point, bias, variance, and measuring accuracy.</li>
+                            <li>Read this <a href="http://www.r2d3.us/visual-intro-to-machine-learning-part-2/">introductory tutorial</a> model tuning and the bias-variance tradeoff.</li>
+                            <li>Learned about different types of decision trees like ID3, C4.5, CART, C5.0 <a href="https://www.youtube.com/watch?v=LDRbO9a6XPU&app=desktop">here</a></li>
+                            <li>Read this <a href="http://ciml.info/dl/v0_99/ciml-v0_99-ch01.pdf">tutorial</a> by Hal Daumé III on how to build machine learning decision tree algorithms from scratch</li>
                         </ul>
                         <h3>Key Skills and Components</h3>
                         <ul>
-                            <li></li>
+                            <li>Python Programming</li>
+                            <li>Probability and Statistics</li>
+                            <li>Data Analytics</li>
+                            <li>Machine learning</li>
+                            <li>Decision tree algorithm</li>
                         </ul>
                         <h3 id="activities">Activities</h3>
+                        <h4>Data Analysis</h4>
+                        <p>
+                            In alignment with my biggest lesson from Hal Daumé III resource that <i>the biggest and most important task in building a decision tree is knowing the best questions to ask and their order</i>. I attempted to manually determine the best questions to ask and their order when buiding a decision tree model for the <a href="http://archive.ics.uci.edu/ml/datasets/Zoo?ref=datanews.io">UCI zoo dataset</a>. 
+                        </p>
+                        <p>
+                            I begain with getting the dataset and saving it as a zoo dataframe in this <a href="https://colab.research.google.com/drive/1jbkcQnGmCo8jCG_o5BeSDr6PIz5FKAya?usp=sharing">Colab Notebook</a>, then explored the dataset for untidiness or dirtiness. 
+                            With the python codes - 
+                            <code>zoo.head(), zoo.shape</code>, <code>zoo.info()</code>, and <code>zoo.describe()</code>, I explored the data to check for:
+                            <ul>
+                                <li>missing data</li>
+                                <li>incorrect variable types</li>
+                                <li>anomalies in the data distribution</li>
+                            </ul>    
+                            I observed that the dataset is complete and clean - no missing data, nor incorrect types - also, the variables values are all binary expect for legs and type which are numerical.
+                        </p>
+                        <p>
+                            Afterwards, I explored each of the animal types or labels to determine what features or properties are peculiar to each animal. For instance, I fetched entries of the zoo dataset where the animals are type 1. There are 41 of them and interestingly, all 41 of them produce milk, have backbone, breath, are not venomous, and have no feathers. Then I went further to explore each of these variables associated with type 1 animals and found out that only type1 animals produce milk. <br/>
+                            In essence, <b><i>asking the question "does the animal produce milk" can determine if an animal in the dataset is type 1 or not</i></b>. A documentation of this process can be found in the <i>Determining the Best Questions</i> section of this <a href="https://colab.research.google.com/drive/1jbkcQnGmCo8jCG_o5BeSDr6PIz5FKAya?usp=sharing">Colab Notebook</a>.
+                        </p>
+                        I repeated this process iteratively for the other animal types, and my observations related to their unique properties is described in the image below.
+                        
+                        <figure class="col-lg-7" >
+                            <img class="img img-fluid" src="assets/img/zoo-animals-properties.jpg" alt="" />
+                            <figcaption><em>Observed properties of the UCI Zoo dataset types</em></figcaption>
+                        </figure>
+                        Interestingly, when run the scikit learn decision tree model on the dataset and visualized the result, Milk was the first question asked by the model as depicted below. Prior to this exercise, I had design tree algorithms split data by randomly selecting variables. This made me think - <i>machine learning models are not black boxes afterall</i>
+                        <figure class="col-lg-9" >
+                            <img class="img img-fluid" src="assets/img/scikit-learn ID3 viz.JPG" alt="" />
+                            <figcaption><em>Scikit learn decision tree visualization</em></figcaption>
+                        </figure>
                         <h4>Learning about decision tree algorithms</h4>
                         <p>
                             
                         </p>
+                        <h4>Choosing a Decision Tree algorithm to Implement</h4>
+                        <p>
+                            Before this step, I had read about decision tree algorithms and discovered the different types of decision tree algorithms mainly ID3, C4.5, CART, C5.0 as mentioned earlier. In this activity, I implemented an ID3 decision tree alogrithm from scratch. I decided to build an ID3 algorithm because I learned from reading the <a href="https://scikit-learn.org/stable/modules/tree.html">scikitlearn decision trees documentation</a> that the scikitlearn decision tree classifier is an implementation of the CART algorithm. I observed CART and ID3 are most popular among the algorithm types and <b>I decided to implement the ID3 alogrithm so that I can compare the prediction results of both ID3 and CART</b>.
+                            <blockquote>The ID3 (Iterative Dichotomiser 3) algorithm find the independent variable that will give the highest information gain for the label or class (type variable in the Soo dataset) using a greedy approach. It does this recursively until the trees are grown to their maximum size.</blockquote>
+                             CART also uses this <q>highest information gain</q> approach except that it uses a different metric to determine the variable with the highest information gain. <i>CART uses the gini index while ID3 uses Entropy</i>. <b>Entropy and Gini index are both measures of how impure the classification generated by splitting the dataset or subset using a given variable is</b>. Also, entropy produces high values while Gini index values are always less than 1. 
+                        </p>
                         <h4>Building ID3 Decision Tree</h4>
                         <p>
-                        </p>
+                            The code I wrote to implement the ID3 decision tree algorithm can be found in the ID3 Algorithm Implementation section of the <a href="https://colab.research.google.com/drive/1jbkcQnGmCo8jCG_o5BeSDr6PIz5FKAya?usp=sharing">Colab Notebook</a>.
+                            Writing the program to build the decision tree was not as easy as when I did it manually. There were so many questions to answer: how will it know the best questions to ask? How will it create branches? And how will it know when the assign labels to a node? I needed answers to these questions to be able to program it. The pseudocode of the ID3 algorithm from wiki was clear and I used it to direct myself throughout the implementation process.
+                            After implementing the algorithm, I realized I needed the “predict” function – the one we call when we want to a model to make predictions. I searched online for pseudocodes to implement it but couldn’t find it. So, I used the code snippets from here to implement the prediction and tree generation aspects. Although, I still haven’t figured out how to implement the predict function on my own, I think being able to write the ID3 algorithm myself is a huge step for me. It made me realized ML algorithms are not so opaque and it is my first baby step towards unraveling ML algorithms. 
+                            With that “little” achievement of successfully implementing the ID3 algorithm from scratch, even though I couldn’t complete the stretch task (which I almost gave up because I thought it was too difficult), I can proudly say I was able to learn how to implement ML decision tree algorithms from scratch. With practice, I’d get better at it.
+                            </p>
                         <h3>Challenges and Solutions</h3>
                         <ul>
                             <li>
@@ -100,7 +147,7 @@
                         </ul>
                         <h3>Takeaway Lessons</h3>
                         <ul>
-                            <li>
+                            <li>There are different 
                             </li>
                             <li>
                             </li>
