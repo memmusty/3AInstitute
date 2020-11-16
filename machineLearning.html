@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                     <div class="project-text">
-                        <h1>Decision Tree from Scratch</h1>
+                        <h1>Decision Tree from Scratch - Towards Explainable AI</h1>
                         <hr class="d-none d-lg-block mb-4 ml-0" />
 
                         <h3>Introduction</h3>
@@ -51,8 +51,9 @@
                         <ul>
                             <li>About different types of decision tree algorithms</li>
                             <li>About decision tree algorithms and their decision metrics</li>
-                            <li>How to build the ID3 decision tree algorithm from scratch</li>
-                            <li>Understand how decision tree classifiers work</li>
+                            <li>The steps involved in building ID3 decision tree classifier from scratch</li>
+                            <li>How to build and built the ID3 decision tree classifier from scratch</li>
+                            <li>How decision tree classifiers work</li>
                         </ul>
                         <h3>Prerequisite Knowledge and Learning resources</h3>
                         In preperation for the system analysis, I:
@@ -65,6 +66,7 @@
                         <h3>Key Skills and Components</h3>
                         <ul>
                             <li>Python Programming</li>
+                            <li>Algorithmic problem solving</li>
                             <li>Probability and Statistics</li>
                             <li>Data Analytics</li>
                             <li>Machine learning</li>
@@ -101,11 +103,7 @@
                             <img class="img img-fluid" src="assets/img/scikit-learn ID3 viz.JPG" alt="" />
                             <figcaption><em>Scikit learn decision tree visualization</em></figcaption>
                         </figure>
-                        <h4>Learning about decision tree algorithms</h4>
-                        <p>
-                            
-                        </p>
-                        <h4>Choosing a Decision Tree algorithm to Implement</h4>
+                        <h4>Learning About Decision Tree Algorithms</h4>
                         <p>
                             Before this step, I had read about decision tree algorithms and discovered the different types of decision tree algorithms mainly ID3, C4.5, CART, C5.0 as mentioned earlier. In this activity, I implemented an ID3 decision tree alogrithm from scratch. I decided to build an ID3 algorithm because I learned from reading the <a href="https://scikit-learn.org/stable/modules/tree.html">scikitlearn decision trees documentation</a> that the scikitlearn decision tree classifier is an implementation of the CART algorithm. I observed CART and ID3 are most popular among the algorithm types and <b>I decided to implement the ID3 alogrithm so that I can compare the prediction results of both ID3 and CART</b>.
                             <blockquote>The ID3 (Iterative Dichotomiser 3) algorithm find the independent variable that will give the highest information gain for the label or class (type variable in the Soo dataset) using a greedy approach. It does this recursively until the trees are grown to their maximum size.</blockquote>
@@ -113,47 +111,116 @@
                         </p>
                         <h4>Building ID3 Decision Tree</h4>
                         <p>
-                            The code I wrote to implement the ID3 decision tree algorithm can be found in the ID3 Algorithm Implementation section of the <a href="https://colab.research.google.com/drive/1jbkcQnGmCo8jCG_o5BeSDr6PIz5FKAya?usp=sharing">Colab Notebook</a>.
-                            Writing the program to build the decision tree was not as easy as when I did it manually. There were so many questions to answer: how will it know the best questions to ask? How will it create branches? And how will it know when the assign labels to a node? I needed answers to these questions to be able to program it. The pseudocode of the ID3 algorithm from wiki was clear and I used it to direct myself throughout the implementation process.
-                            After implementing the algorithm, I realized I needed the “predict” function – the one we call when we want to a model to make predictions. I searched online for pseudocodes to implement it but couldn’t find it. So, I used the code snippets from here to implement the prediction and tree generation aspects. Although, I still haven’t figured out how to implement the predict function on my own, I think being able to write the ID3 algorithm myself is a huge step for me. It made me realized ML algorithms are not so opaque and it is my first baby step towards unraveling ML algorithms. 
-                            With that “little” achievement of successfully implementing the ID3 algorithm from scratch, even though I couldn’t complete the stretch task (which I almost gave up because I thought it was too difficult), I can proudly say I was able to learn how to implement ML decision tree algorithms from scratch. With practice, I’d get better at it.
+                            The code I wrote to implement the ID3 decision tree algorithm can be found in the ID3 Algorithm Implementation section of the <a href="https://colab.research.google.com/drive/1jbkcQnGmCo8jCG_o5BeSDr6PIz5FKAya?usp=sharing">Colab Notebook</a>. The code was written as a python implementation of the <a href="https://en.wikipedia.org/wiki/ID3_algorithm">ID3 pseudocode from wiki</a>, and the formulas for Entropy and Information Gain.
+                            The formulas for entropy and information gain in shown in mathematical models as interpreted by me in the below images.
+                            <div class="row">
+                                <figure class="col-lg-5" >
+                                    <img class="img img-fluid" src="assets/img/entropy ID3.JPG" alt="" />
+                                    <figcaption><em>Entropy Formula</em></figcaption>
+                                </figure>
+                                <figure class="col-lg-5" >
+                                    <img class="img img-fluid" src="assets/img/information gain ID3.JPG" alt="" />
+                                    <figcaption><em>Information Gain Formula</em></figcaption>
+                                </figure>
+                            </div>
+                            Below are the code snippets used in implementating the Entropy and Information Gain.
+                            <pre>
+    def entropy(col):
+    """
+    Calculate the entropy of a dataset. 
+    It takes as parameter the column name.
+    It returns the measures of impurity of the given column, the label column.
+    The return type is double
+    """
+
+    #Get the counts of unique values in the column
+    val_cnt = col.value_counts().sort_index()
+
+    #Get the valuesin the column and their respective counts
+    vals = val_cnt.index.tolist()
+    counts = val_cnt.values.tolist()
+
+    #Calculate column entropy
+    entropy = 0
+    for i in range(len(vals)):
+        prob = counts[i]/np.sum(counts)
+        ln = np.log2(prob)
+        entropy = entropy - (prob * ln)
+    return entropy
+                            </pre>
+                            <pre>
+def Gain(data, var):
+    """
+    Calculates the information gain of a give dataset. 
+    It takes as parameters the dataset whose information gain will be claculated,
+    and the variable on which the information gain will be calculated.
+
+    It returns the information gain and the return types is double
+    """    
+    #Calculate the entropy of the whole zoo dataset
+    label = "type"
+    data_entropy = entropy(data[label])
+    
+    ##Calculate the entropy of the dataset
+    
+    ##Get the values in the split variable and their respective counts  
+    val_cnt = data[var].value_counts().sort_index()
+    vals = val_cnt.index.tolist()
+    counts = val_cnt.values.tolist()
+
+    #Calculate the entropy of the sub dataset
+    sub_entropy = 0
+    for i in range(len(vals)):
+        sub_data = data.loc[zoo[var] == vals[i]]
+        sub_label = sub_data[label]
+        prob = counts[i]/np.sum(counts)
+        sub_entropy = sub_entropy + (prob * entropy(sub_label))
+
+    #Calculate the information gain on the variable
+    Information_Gain = data_entropy - sub_entropy
+    return Information_Gain
+       
+                            </pre>
+                            <h3>Challenges and Future Plans</h3>
+                            <p>
+                                Given my prior algorithmic problem solving and Python programming skills, the challenge with implementing the ID3 algorithm was mainly how to design the decision tree such that it will know the best questions to ask and ask them in the right order, determine when to cerate a branch, choose the best split point, etc. Trying to determine these questions manually through data anlytics was not easy, however, building an algorithm that can do that recursively was almost an impossible task for me. The detailed instructions from the <a href="https://en.wikipedia.org/wiki/ID3_algorithm">ID3 wiki page</a> helped me get started with implementing some of the functions needed like the entropy and information gain, before implementating the ID3 algorithm itself. On the flip side, it made me conscious of the actions and decisions I took when I did it manually that I didn't take note of - how did I know what questions to ask as I examined each variable related to a type recursively? how did I know when to stop?
                             </p>
-                        <h3>Challenges and Solutions</h3>
-                        <ul>
-                            <li>
-                                <p>
-                                    <b></b>: 
-                                </p>
-                                <p>
-                                    <b>Solution:</b> 
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    <b>:</b> 
-                                </p>
-                                <p>
-                                    <b>Solution:</b> 
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    <b></b>: 
-                                </p>
-                                <p>
-                                    <b>Solution</b>:
-                                </p>
-                            </li>
-                        </ul>
+                            <p>
+                                Afterwards, the next challenge was testing the model by fitting it to the dataset and making predictions on unlabelled data entries - only then can I compare its result with scikit-learn's. I was so excited about implementating the algorithm that I didn't realize I needed the “predict” or "fit" function to be able to test the model on data. I actually didn't know I needed to program the function too until then. To solve this, I spent hours searching for pseudocodes to implement decision tree classifiers "fit" or "predict" function online but couldn’t find it.
+                            </p>
+                            <p>
+                                Since I couldn't find any resource that could me implement the "fit" and "predict" functions from scratch, I used the code snippets for the Predict function from <a href="https://www.python-course.eu/Decision_Trees.php">here</a>. 
+                            </p>
+                            <p>
+                                Even though I couldn’t implement the predict function on my own from scratch, being able to implement the ID3 algorithm myself is a huge step for me towards explainable CPSs and AI. It is my first baby step towards unraveling ML algorithms and figuring out how to make it more explainable to diverse audience. 
+                            </p>
+                            <p>Prior to this exercise, even thoght I have statistic and probability knowlegde, I had assumed a lot of things about how decision tree classifiers work as mentioned earlier; and this exercise has been really eye-opening and proved my assumptions wrong. I can proudly say I was able to implement a machine learning decision tree classifier from scratch. I am excited to get better at this and explore how to demystify CPSs and AI driven system to the public.</p>
                         <h3>Takeaway Lessons</h3>
-                        <ul>
-                            <li>There are different 
-                            </li>
-                            <li>
-                            </li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <p>
+                            The main lesson from this exercise is that machine learning algorithms are not really black-boxes, they are implementation of existing probabilistic and statistical rules and can made explainable if conscious efforts are put into designing them in such a way that their algorithms "at the backend" are more accessible to those interested in it. It can also be more explainable by illustrating how the predictions are gotten like with the scikit-learn decision tree visualization. I also see this being handy when building <q>explainable</q> CPSs; I intend to keep these in mind when designing CPSs in the future.
+                        </p>
+
+                        <h3>On a Light Note...</h3>
+                        <p>
+                            I tried to build a customized image classifier from scratch with Teachable machine. On the first iteration, where I trained a model with only images of the object classes I was interested in, I learned that I needed more data for higher accuracy and if I am interested in just say "x" classes, I need atleast "x+1" object classes for the model to be robust. As the model will always classify given objects as belonging to the class it has the closest similarity to even if it is a wrong class.
+                        </p>
+                        <p>
+                            As shown in the image below, I tried to build a classifier that can identify magpies and superb parrots, so I created a model with just those 2 classes. Afterwards, I created P5.js application to serve as testing ground for the model. When I tested it on magpie images, it correctly identified them. However, when I tested it on other images like Sterling, it misclassify them as magpies.
+                            <div class="row">
+                                <figure class="col-lg-4" >
+                                    <img class="img img-fluid" src="assets/img/TM1 daaset.JPG" alt="" />
+                                    <figcaption><em>The classifier training set</em></figcaption>
+                                </figure>
+                                <figure class="col-lg-4" >
+                                    <img class="img img-fluid" src="assets/img/magpie TM1.JPG" alt="" />
+                                    <figcaption><em>The result of testing the model on a magpie image</em></figcaption>
+                                </figure>
+                                <figure class="col-lg-4" >
+                                    <img class="img img-fluid" src="assets/img/sterling TM1.JPG" alt="" />
+                                    <figcaption><em>The result of testing the model on a magpie image</em></figcaption>
+                                </figure>
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
