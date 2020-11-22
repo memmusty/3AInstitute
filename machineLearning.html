@@ -213,10 +213,10 @@ def Gain(data, var):
 
                         <h3>A fun Project - Building Custom Image Classifier from Scratch</h3>
                         <p>
-                            I tried to build a custom image classifier from scratch with Teachable machine for the Aviary CPS, but to also achieve my learning goal of being able to build ML algorithms from scratch. On the first iteration, where I trained a model with only images of the object classes I was interested in, I learned that I needed more data for higher accuracy and if I am interested in just say "x" classes, I need atleast "x+1" object classes for the model to be robust. As the model will always classify given objects as belonging to the class it has the closest similarity to even if it is a wrong class.
+                            I tried to build a custom image classifier from scratch with Teachable machine for the Aviary CPS; to also achieve my learning goal of being able to build ML algorithms from scratch. On the first iteration, where I trained the model with only images of the object classes I was interested in, the model was overfitted and couldn't correctly classify other object types. The model classified given objects as belonging to a class it has the closest similarity to even if it is a wrong class. I learned that I needed more data for higher accuracy and if I am interested in just say "x" classes, I need atleast "x+1" object classes for the model to be robust. 
                         </p>
                         <p>
-                            As shown in the image below, I tried to build a classifier that can identify Magpies and superb parrots, so I created a model with just those 2 classes. Afterwards, I created P5.js application to serve as testing ground for the model. When I tested it on Magpie images, it correctly identified them. However, when I tested it on other images like Sterling, it misclassify them as Magpies.
+                            As shown in the images below, I tried to build a bird image classifier that can identify Magpies and superb parrots, so I created a model with just those 2 classes. Afterwards, I created a <a href="https://editor.p5js.org/memunati/sketches/iG1Dxus00">P5.js application</a> to serve as testing ground for the model. When I tested it on Magpie images, it correctly identified them. However, when I tested it on other images like Sterling, it misclassified them as Magpies.
                             <div class="row">
                                 <figure class="col-lg-4" >
                                     <img class="img img-fluid" src="assets/img/TM1 daaset.JPG" alt="" />
@@ -250,7 +250,7 @@ def Gain(data, var):
                                 <figcaption><em>The result of testing the model on a Magpie image</em></figcaption>
                             </figure>
                         </div>
-                        <b>I intend to use about 1000 images for each class in the next iteration and tune the model's parameters like the epochs and learning rate to see what happens.</b>
+                        <b>I intend to use about 1000 images for each class in the next iteration and tune the model's parameters like the epochs and learning rate to see what happens and how the model performance improves.</b>
 
                         <h4 style="margin-top: 1rem;">Cheers! and Stay Tuned...</h4>
                     </div>
